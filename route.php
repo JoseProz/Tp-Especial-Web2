@@ -17,8 +17,6 @@
             }
             else if($partesURL[0] == "insertar"){
                 $controller->InsertarDestino();
-            }elseif($partesURL[0] == "finalizar") {
-                $controller->FinalizarDestino($partesURL[1]);
             }elseif($partesURL[0] == "borrar") {
                 $controller->BorrarDestino($partesURL[1]);
             }
