@@ -21,12 +21,12 @@
 
             $this->model->InsertarDestino($_POST['nombre'],$_POST['descripcion'],$_POST['temporada_alta'],$_POST['puntaje']);
         
-            header("Location: " . BASE_URL);
+            header("Location: " . URL_DESTINO);
          }
 
-         public function BorrarDestino($id_destino){
-            $this->model->BorrarDestino($id_destino);
-            header("Location: " . BASE_URL);
+         public function BorrarDestino($id){
+            $this->model->BorrarDestino($id);
+            header("Location: " . URL_DESTINO);
          }
     }
         

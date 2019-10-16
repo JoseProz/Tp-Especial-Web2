@@ -8,7 +8,7 @@ class ViewDestino{
     public function DisplayDestino($destinos){
         $smarty = new Smarty();
         $smarty->assign('titulo',"MOSTRAR DESTINOS ");
-        $smarty->assign('BASE',BASE_URL);
+        $smarty->assign('BASE',URL_DESTINO);
         $smarty->assign('destinos',$destinos);
         $smarty->display('templates/ver_destinos.tpl');
     }

@@ -18,8 +18,8 @@
                 $sentencia = $this->db->prepare("INSERT INTO destino(nombre,descripcion,temporada_alta,puntaje) VALUES(?,?,?,?)");
                 $sentencia->execute(array($nombre,$descripcion,$temporada_alta,$puntaje ));
             }
-            public function BorrarDestino($id_destino){
+            public function BorrarDestino($id){
                 $sentencia = $this->db->prepare("DELETE FROM destino WHERE id_destino=?");
-                $sentencia->execute(array($id_destino));
+                $sentencia->execute(array($id));
         }
     }
