@@ -1,5 +1,5 @@
 <?php
-    class Destino_Model {
+    class ModelDestino {
 
         private $db;
 

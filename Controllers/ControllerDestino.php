@@ -1,14 +1,14 @@
 <?php
-    require_once "./Models/Destino_Model.php";
-    require_once "./Views/Destino_View.php";
-    class Destino_Controller{
+    require_once "./Models/ModelDestino.php";
+    require_once "./Views/ViewDestino.php";
+    class ControllerDestino{
 
         private $model;
         private $view;
 
         function __construct(){
-            $this->model=new Destino_Model();
-            $this->view=new Destino_View();
+            $this->model=new ModelDestino();
+            $this->view=new ViewDestino();
         }
 
         public function getDestino(){

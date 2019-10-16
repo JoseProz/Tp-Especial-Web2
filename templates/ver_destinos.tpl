@@ -1,7 +1,7 @@
 {include file="header.tpl"}
 
             {foreach from=$destinos  item=destino}
-                <li>*{$destino->id_destino}, destino : {$destino->nombre}, descripcion : {$destino->descripcion}, temporada alta :  {$destino->temporada_alta}, puntaje:  {$destino->puntaje} - <a href='borrar/{$destino->id_destino}'>Borrar</a></li>
+                <li class="list-group-item list-group-item-secondary">*{$destino->id_destino}, destino : {$destino->nombre}, descripcion : {$destino->descripcion}, temporada alta :  {$destino->temporada_alta}, puntaje:  {$destino->puntaje} - <a href='borrar/{$destino->id_destino}'>Borrar</a></li>
             
             {/foreach}
 

@@ -1,25 +1,62 @@
 <?php
+    require_once "./Controllers/ControllerDestino.php";
+    require_once "Controllers/ControllerUser.php";
+    require_once "Controllers/ControllerRegistro.php";
+    require_once "Controllers/ControllerInicio.php";
 
-    require_once "./Controllers/Destino_Controller.php";
     $action = $_GET["action"];
-    define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
-    $controller = new Destino_Controller();
-    
+    define("BASE", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
+    define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/destinos');
+    //define("URL_DESTINO", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/destinos');
+    define("URL_LOGIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/login');
+    define("URL_LOGOUT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/logout');
+    define("URL_IR", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/iniciarRegistro');
+    $controller = new ControllerDestino();
+    $controllerUser = new ControllerUser();
+    $controllerInicio = new ControllerInicio();
     if($action == ''){
-        $controller->getDestino();
+        $controllerInicio->getInicio();
     
     }else{
         if (isset($action)){
             $partesURL = explode("/", $action);
             
-            if($partesURL[0] == "materias"){
+            if($partesURL[0]=="registro"){
+                $controllerInicio= new ControllerInicio();
+                $controllerInicio->getInicio();
+            }
+            if($partesURL[0] == "destinos"){
             $controller-> getDestino();
             }
             else if($partesURL[0] == "insertar"){
                 $controller->InsertarDestino();
+
             }elseif($partesURL[0] == "borrar") {
                 $controller->BorrarDestino($partesURL[1]);
+
+            }elseif($partesURL[0] == "login") {
+                $controllerUser->Login();
+
+            }elseif($partesURL[0] == "iniciarSesion") {
+                var_dump("login");
+                $controllerUser->IniciarSesion();
             }
-        }
+            elseif($partesURL[0] == "logout") {
+                $controllerUser = new ControllerUser();
+                $controllerUser->Logout();
+            }
+            elseif($partesURL[0]== "iniciarRegistro"){
+                $controllerRegistro= new ControllerRegistro();
+                $controllerRegistro->registrar();
+            }
+            elseif($partesURL[0]=="datosUser"){
+                $controllerRegistro= new ControllerRegistro();
+                $controllerRegistro->ingresarDatos();
+            }
+            elseif($partesURL[0]=="iniciarVisita"){
+                $controllerInicio= new ControllerInicio();
+                $controllerInicio->getVisita();
+            }
     }
+}
 ?>
