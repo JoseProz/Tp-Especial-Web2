@@ -42,10 +42,12 @@ class ControllerHotel{
         $this->modelHotel->InicializarHotel($id);
         header("location:" .BASE_URL);
     }
-    public function ModificarItem($id){
-        $this->modelHotel->Get_id($id);
-        header("location:" .BASE_URL);
+    public function HotelesdeunDestino($id){
+        $hoteles=$this->modelHotel->HotelesdeunDestino($id);
+        $this->viewHotel->DisplayHotelesdeDestino($hoteles);
+
     }
+    
 
 }
 ?>

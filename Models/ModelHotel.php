@@ -38,8 +38,15 @@ class ModelHotel{
         $sentencia->execute(array($id));
     }
 
-    public function ModificarItem($id){
-        $sentencia= $this->db->prepare();
+    //public function ModificarItem($id){
+        //$sentencia= $this->db->prepare("UPDATE hotel SET nombre,descripcion,temporada_alta,puntaje WHERE id_hotel=?");
+        //$sentencia->execute(array($id));
+   // }
+    public function HotelesdeunDestino($id){
+        $sentencia= $this->db->prepare("SELECT*FROM hotel WHERE id_destino=?");
+        $sentencia->execute(array($id));
+        $hoteles=$sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $hoteles;
     }
 
 }
