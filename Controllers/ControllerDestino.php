@@ -28,5 +28,6 @@
             $this->model->BorrarDestino($id);
             header("Location: " . URL_DESTINO);
          }
+        
     }
         

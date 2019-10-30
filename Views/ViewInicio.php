@@ -5,8 +5,8 @@ class ViewInicio {
     }
     public function DisplayInicio(){
         $smarty = new Smarty();
-        $smarty->assign('titulo',"Inicio");
-        $smarty->assign('BASE',URL_DESTINO);
+        $smarty->assign('titulo',"Turismo Argentina");
+        $smarty->assign('BASE',BASE_URL);
         $smarty->display('templates/Inicio.tpl');
     }
 }
