@@ -19,7 +19,7 @@ class ControllerUser {
             session_start();
             $_SESSION['user'] = $usuario->mail;
             $_SESSION['userId'] = $usuario->id_usuario;
-            header("Location: " . BASE_URL);
+            header("Location: " . URL_DESTINO);
         }else{
             header("Location: " . URL_LOGIN);
           

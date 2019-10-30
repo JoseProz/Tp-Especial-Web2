@@ -20,8 +20,8 @@
             {/foreach}
             </tbody>
         </table>
-            
-        <form class="form-inline"action="insertar" method="post">
+
+              <form class="form-inline"action="insertar" method="post">
             <div class="form-group mx-sm-3 mb-2">
                 <input type="text" class="form-control" name="nombre"placeholder="Destino">
             </div>
@@ -36,6 +36,24 @@
             </div>
             <button type="submit" class="btn btn-primary mb-2">Insertar</button>
         </form>
-            
+        {****************************************************************************************************}
+         <form class="form-inline"action="editarTabla" method="post">
+            <div class="form-group mx-sm mb-2">
+                <input type="number" class="form-control" name="id_destino"placeholder="ID">
+            </div>
+            <div class="form-group mx-sm mb-2">
+                <input type="text" class="form-control" name="nombre"placeholder="Destino">
+            </div>
+            <div class="form-group mx-sm mb-2">
+                <input type="text" class="form-control" name="descripcion"placeholder="Descripcion">
+            </div>
+            <div class="form-group mx-sm mb-2">
+                <input type="text" class="form-control" name="temporada_alta"placeholder="Temporada Alta">
+            </div>
+            <div class="form-group mx-sm mb-2">
+                <input type="text" class="form-control" name="puntaje"placeholder="Puntaje">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Editar</button>
+        </form>
     </body>
 </html>

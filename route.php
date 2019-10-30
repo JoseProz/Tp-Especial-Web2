@@ -1,13 +1,14 @@
 <?php
-    require_once "./Controllers/ControllerDestino.php";
+    require_once "Controllers/ControllerDestino.php";
     require_once "Controllers/ControllerUser.php";
     require_once "Controllers/ControllerRegistro.php";
     require_once "Controllers/ControllerInicio.php";
+    require_once "Controllers/ControllerHotel.php";
 
     $action = $_GET["action"];
     define("BASE", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
-    define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/destinos');
-    //define("URL_DESTINO", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/destinos');
+    define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/hoteles');
+    define("URL_DESTINO", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/destinos');
     define("URL_LOGIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/login');
     define("URL_LOGOUT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/logout');
     define("URL_IR", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/iniciarRegistro');
@@ -34,7 +35,19 @@
             }elseif($partesURL[0] == "borrar") {
                 $controller->BorrarDestino($partesURL[1]);
 
-            }elseif($partesURL[0] == "login") {
+            }
+            elseif($partesURL[0]=="mostrarHoteles"){
+                $controllerHotel=new controllerHotel();
+                $controllerHotel->HotelesdeunDestino($partesURL[1]);
+            }
+            elseif($partesURL[0] == "editar") {
+                $controller->ModificarItem($partesURL[1]);
+            }
+            elseif($partesURL[0]=="editarTabla"){
+                $controller->ModificarItem();
+            }
+            
+            elseif($partesURL[0] == "login") {
                 $controllerUser->Login();
 
             }elseif($partesURL[0] == "iniciarSesion") {
@@ -56,6 +69,29 @@
             elseif($partesURL[0]=="iniciarVisita"){
                 $controllerInicio= new ControllerInicio();
                 $controllerInicio->getVisita();
+            }
+            elseif($partesURL[0]=="hoteles"){
+                $controllerHotel= new ControllerHotel();
+                $controllerHotel->GetHoteles();
+                
+            }
+            elseif($partesURL[0]=="insertar"){
+                $controllerHotel= new ControllerHotel();
+                $controllerHotel->InsertarHotel();
+               
+            }
+            elseif($partesURL[0]=="finalizar"){
+                $controllerHotel= new ControllerHotel();
+                $controllerHotel->FinalizarHotel($partesURL[1]);
+            }
+            elseif($partesURL[0]=="borrar"){
+                $controllerHotel= new ControllerHotel();
+                $controllerHotel->BorrarHotel($partesURL[1]);
+                
+            }
+            elseif($partesURL[0]=="inicializar"){
+                $controllerHotel= new ControllerHotel();
+                $controllerHotel->InicializarHotel($partesURL[1]);
             }
     }
 }

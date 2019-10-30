@@ -6,7 +6,7 @@ class ViewRegistro {
     public function DisplayRegistro(){
         $smarty = new Smarty();
         $smarty->assign('titulo',"Registrese");
-        $smarty->assign('BASE',BASE_URL);
+        $smarty->assign('BASE',URL_DESTINO);
         $smarty->display('templates/datosUser.tpl');
     }
 }

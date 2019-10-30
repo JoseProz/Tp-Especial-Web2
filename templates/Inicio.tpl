@@ -18,7 +18,7 @@
                                                 
                                             </div>
                                           </form> 
-                                          <form action="iniciaqrSesion" method="post">   
+                                          <form action="iniciarSesion" method="post">   
                                             <div class="row align-items-center remember">
                                             <button type="submit" class="btn btn-primary mb-3 btn-lg btn-block" value="Login" placeholder="Registrarme">Login</button>
                                                 

@@ -21,6 +21,8 @@ class ControllerRegistro{
         $password=$_POST['pass'];
         $usuarios = $this->model->getUsuarios();
         
+
+        
             foreach ($usuarios as $usuario) {
                 if (($email)==($usuario->email)){
                     $this->registrar();die;

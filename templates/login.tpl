@@ -11,7 +11,7 @@
     <!-- Login Form -->
     <form action="iniciarSesion" method="post">
       <input type="text" id="login" class="fadeIn second" name="user" placeholder="Usuario">
-      <input type="password" id="password" class="fadeIn third" name="pass" placeholder="password">
+      <input type="password" id="password" class="fadeIn third" name="pass" placeholder="Password">
       <input type="submit" class="fadeIn fourth" value="Login">
     </form>
 
