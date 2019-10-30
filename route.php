@@ -83,7 +83,7 @@
                 $controllerHotel= new ControllerHotel();
                 $controllerHotel->FinalizarHotel($partesURL[1]);
             }
-            elseif($partesURL[0]=="borrar"){
+            elseif($partesURL[0]=="borrarHotel"){
                 $controllerHotel= new ControllerHotel();
                 $controllerHotel->BorrarHotel($partesURL[1]);
                 
