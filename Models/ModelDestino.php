@@ -22,4 +22,5 @@
                 $sentencia = $this->db->prepare("DELETE FROM destino WHERE id_destino=?");
                 $sentencia->execute(array($id_destino));
         }
+        
     }
