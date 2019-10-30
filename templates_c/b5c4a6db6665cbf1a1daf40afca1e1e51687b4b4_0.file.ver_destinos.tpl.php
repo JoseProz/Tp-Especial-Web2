@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-24 00:03:35
+/* Smarty version 3.1.33, created on 2019-10-25 17:33:58
   from 'C:\xampp\htdocs\proyectos\web2\Tp-Especial-Web2\Tp-Especial-Web2\templates\ver_destinos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db0ce372de923_55741393',
+  'unifunc' => 'content_5db315e6330f92_56504388',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b5c4a6db6665cbf1a1daf40afca1e1e51687b4b4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\web2\\Tp-Especial-Web2\\Tp-Especial-Web2\\templates\\ver_destinos.tpl',
-      1 => 1571868063,
+      1 => 1571869496,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_5db0ce372de923_55741393 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db315e6330f92_56504388 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
