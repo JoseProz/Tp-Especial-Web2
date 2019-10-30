@@ -72,8 +72,7 @@
             }
             elseif($partesURL[0]=="hoteles"){
                 $controllerHotel= new ControllerHotel();
-                $controllerHotel->GetHoteles();
-                
+                $controllerHotel->GetHoteles();  
             }
             elseif($partesURL[0]=="insertar"){
                 $controllerHotel= new ControllerHotel();

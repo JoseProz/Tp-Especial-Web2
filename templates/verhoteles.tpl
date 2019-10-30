@@ -21,6 +21,7 @@
 
 {/foreach}
 
+<<<<<<< HEAD
 </table>
  <form class="form-inline"action="insertar" method="post">
             <div class="form-group mx-sm mb-2">
@@ -40,6 +41,6 @@
             </div>
             <button type="submit" class="btn btn-primary mb-2">Insertar</button>
         </form>
-
+</table>
 </body>
 </html>
