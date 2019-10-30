@@ -74,7 +74,7 @@
                 $controllerHotel= new ControllerHotel();
                 $controllerHotel->GetHoteles();  
             }
-            elseif($partesURL[0]=="insertar"){
+            elseif($partesURL[0]=="insertarHotel"){
                 $controllerHotel= new ControllerHotel();
                 $controllerHotel->InsertarHotel();
                
@@ -83,7 +83,7 @@
                 $controllerHotel= new ControllerHotel();
                 $controllerHotel->FinalizarHotel($partesURL[1]);
             }
-            elseif($partesURL[0]=="borrar"){
+            elseif($partesURL[0]=="borrarHotel"){
                 $controllerHotel= new ControllerHotel();
                 $controllerHotel->BorrarHotel($partesURL[1]);
                 
