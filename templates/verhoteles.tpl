@@ -21,24 +21,24 @@
 
 {/foreach}
 
-</table>
- <form class="form-inline"action="insertar" method="post">
+ <form class="form-inline"action="insertarHotel" method="post">
             <div class="form-group mx-sm mb-2">
-                <input type="text" class="form-control" name="nombre"placeholder="Nombre hotel">
+                <tr><td><input type="text" class="form-control" name="nombre"placeholder="Nombre hotel"></td>
             </div>
             <div class="form-group mx-sm mb-2">
-                <input type="numb" class="form-control" name="telefono"placeholder="telefono">
+                <td><input type="numb" class="form-control" name="telefono"placeholder="telefono"></td>
             </div>
             <div class="form-group mx-sm mb-2">
-                <input type="text" class="form-control" name="direccion"placeholder="direccion">
+                <td><input type="text" class="form-control" name="direccion"placeholder="direccion"></td>
             </div>
             <div class="form-group mx-sm mb-2">
-                <input type="text" class="form-control" name="precio"placeholder="precio">
+                <td><input type="numb" class="form-control" name="precio"placeholder="precio"></td>
             </div>
+            <td></td>
             <div class="form-group mx-sm mb-2">
-                <input type="numb" class="form-control" name="id_destino"placeholder="id_destino">
+                <td><input type="numb" class="form-control" name="id_destino "placeholder="id_destino"></td>
             </div>
-            <button type="submit" class="btn btn-primary mb-2">Insertar</button>
+            <td><button type="submit" class="btn btn-primary mb-2">Insertar</button></td></tr>
         </form>
 </table>
 </body>
