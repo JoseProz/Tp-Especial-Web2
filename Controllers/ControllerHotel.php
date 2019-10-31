@@ -20,10 +20,10 @@ class ControllerHotel{
     }
     public function InsertarHotel(){
         $ocupado=0;
-        if($_POST['ocupado'] == 'on'){
-            $ocupado=1;
-        }
-      
+        //if($_POST['ocupado'] == 'on'){
+          //  $ocupado=1;
+        //}
+        //var_dump($_POST['nombre']);die();
         $this->modelHotel->InsertarHotel($_POST['nombre'],$_POST['telefono'],$_POST["direccion"],$_POST["precio"],$_POST["ocupado"],$_POST["id_destino"]);
         header("Location:" .BASE_URL);
     
