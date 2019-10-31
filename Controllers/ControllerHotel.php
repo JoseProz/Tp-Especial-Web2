@@ -24,6 +24,7 @@ class ControllerHotel{
             $ocupado=1;
         }
         $this->modelHotel->InsertarHotel($_POST["nombre"],$_POST["telefono"],$_POST["direccion"],$_POST["precio"],$ocupado,$_POST["id_destino"]);
+
         header("Location:" .BASE_URL);
     
     }
