@@ -36,7 +36,7 @@ class ControllerHotel{
         $direccion=$_POST["direccion"];
         $precio=$_POST["precio"];
         $idDestino=$_POST["id_destino"];
-        $hotel =$this->model->ModificarHotel($id,$nombre,$telefono,$direccion,$precio,$idDestino);
+        $hotel=$this->modelHotel->ModificarHotel($id,$nombre,$telefono,$direccion,$precio,$idDestino,$ocupado);
         header("location:" .BASE_URL);
        }
     public function FinalizarHotel($id){
@@ -59,6 +59,5 @@ class ControllerHotel{
 
     }
     
-
 }
 ?>
