@@ -38,9 +38,9 @@ class ModelHotel{
         $sentencia->execute(array($id));
     }
 
-    public function ModificarHotel($id,$nombre,$telefono,$direccion,$precio,$ocupado,$id_destino){
-        $sentencia= $this->db->prepare("UPDATE hotel SET nombre=?,telefono=?,direccion=?,precio=?,id_destino=?,ocupado=? WHERE id_hotel=?");
-        $sentencia->execute(array($nombre,$telefono,$diereccion,$precio,$id_destino,$ocupado,$id));
+    public function ModificarHotel($id,$nombre,$telefono,$direccion,$precio,$idDestino){
+        $sentencia= $this->db->prepare("UPDATE hotel SET nombre=?,telefono=?,direccion=?,precio=?,id_destino=? WHERE id_hotel=?");
+        $sentencia->execute(array($nombre,$telefono,$diereccion,$precio,$idDestino,$id));
         
     }
     public function HotelesdeunDestino($id){

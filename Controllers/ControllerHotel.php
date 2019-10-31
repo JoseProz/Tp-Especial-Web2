@@ -30,8 +30,13 @@ class ControllerHotel{
     }
     public function ModificarHotel(){
         $ocupado=0;
-        var_dump($_POST["id_hotel"]);die;
-        $hotel =$this->model->ModificarHotel($_POST["id_hotel"],$_POST["nombre"],$_POST["telefono"],$_POST["direccion"],$_POST["precio"],$ocupado,$_POST["id_destino"]);
+        $id=$_POST["id_hotel"];
+        $nombre=$_POST["nombre"];
+        $telefono=$_POST["telefono"];
+        $direccion=$_POST["direccion"];
+        $precio=$_POST["precio"];
+        $idDestino=$_POST["id_destino"];
+        $hotel =$this->model->ModificarHotel($id,$nombre,$telefono,$direccion,$precio,$idDestino);
         header("location:" .BASE_URL);
        }
     public function FinalizarHotel($id){
