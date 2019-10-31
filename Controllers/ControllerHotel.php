@@ -23,11 +23,15 @@ class ControllerHotel{
         if($_POST['ocupado'] == 'on'){
             $ocupado=1;
         }
-      
-        $this->modelHotel->InsertarHotel($_POST['nombre'],$_POST['telefono'],$_POST["direccion"],$_POST["precio"],$_POST["ocupado"],$_POST["id_destino"]);
+        $this->modelHotel->InsertarHotel($_POST["nombre"],$_POST["telefono"],$_POST["direccion"],$_POST["precio"],$ocupado,$_POST["id_destino"]);
         header("Location:" .BASE_URL);
     
     }
+    public function ModificarHotel(){
+        $ocupado=0;
+        $hotel =$this->model->ModificarHotel($_POST["id_hotel"],$_POST["nombre"],$_POST["telefono"],$_POST["direccion"],$_POST["precio"],$ocupado,$_POST["id_destino"]);
+        header("location:" .BASE_URL);
+       }
     public function FinalizarHotel($id){
         
         $this->modelHotel->FinalizarHotel($id);
