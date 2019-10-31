@@ -51,6 +51,7 @@
                <td>{$destino->descripcion}</td>
                <td>{$destino->temporada_alta}</td>
                <td>{$destino->puntaje}</td>
+               <td>- <a href='mostrarHoteles/{$destino->id_destino}'>Mostrar Hoteles</a></td>
                <td><a href='borrarDestino/{$destino->id_destino}'>Borrar</a></td>
              </tr>
             {/foreach}
@@ -74,7 +75,7 @@
         </form>
         {****************************************************************************************************}
          <form class="form-inline"action="editarTabla" method="post">
-            <div class="form-group mx-sm mb-2">
+           <div class="form-group mx-sm mb-2">
                 <input type="number" class="form-control" name="id_destino"placeholder="ID">
             </div>
             <div class="form-group mx-sm mb-2">

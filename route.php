@@ -40,8 +40,9 @@
                 $controllerHotel=new controllerHotel();
                 $controllerHotel->HotelesdeunDestino($partesURL[1]);
             }
-            elseif($partesURL[0] == "editar") {
-                $controller->ModificarItem($partesURL[1]);
+            elseif($partesURL[0] == "editarHotel") {
+                $controllerHotel=new controllerHotel();
+                $controllerHotel->ModificarHotel();
             }
             elseif($partesURL[0]=="editarTabla"){
                 $controller->ModificarItem();

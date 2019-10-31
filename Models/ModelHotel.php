@@ -5,7 +5,7 @@ class ModelHotel{
     private $db;
     
     function __construct(){
-    $this->db = new PDO('mysql:host=localhost;'.'dbname=turismo_argentina;charset=utf8', 'root', '');
+    $this->db =new PDO('mysql:host=localhost;'.'dbname=turismo_argentina;charset=utf8', 'root', '');
     
     }
 
@@ -19,8 +19,8 @@ class ModelHotel{
     }
 
     public function InsertarHotel($nombre,$telefono,$direccion,$precio,$ocupado,$id_destino){
-        $sentencia= $this->db->prepare("INSERT INTO hotel(nombre,telefono,direccion,precio,ocupado,id_destino) VALUES(?,?,?,?,?,?)");
-        $resultado=$sentencia->execute(array($nombre,$telefono,$direccion,$precio,$ocupado,$id_destino));
+        $sentencia= $this->db->prepare("INSERT INTO hotel(nombre,telefono,direccion,precio,id_destino,ocupado) VALUES(?,?,?,?,?,?)");
+        $resultado=$sentencia->execute(array($nombre,$telefono,$direccion,$precio,$id_destino,$ocupado));
     }
 
     public function FinalizarHotel($id){
@@ -38,10 +38,11 @@ class ModelHotel{
         $sentencia->execute(array($id));
     }
 
-    //public function ModificarItem($id){
-        //$sentencia= $this->db->prepare("UPDATE hotel SET nombre,descripcion,temporada_alta,puntaje WHERE id_hotel=?");
-        //$sentencia->execute(array($id));
-   // }
+    public function ModificarHotel($id,$nombre,$telefono,$direccion,$precio,$ocupado,$id_destino){
+        $sentencia= $this->db->prepare("UPDATE hotel SET nombre=?,telefono=?,direccion=?,precio=?,id_destino=?,ocupado=? WHERE id_hotel=?");
+        $sentencia->execute(array($nombre,$telefono,$diereccion,$precio,$id_destino,$ocupado,$id));
+        
+    }
     public function HotelesdeunDestino($id){
         $sentencia= $this->db->prepare("SELECT*FROM hotel WHERE id_destino=?");
         $sentencia->execute(array($id));
