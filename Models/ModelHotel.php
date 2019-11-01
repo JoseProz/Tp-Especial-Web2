@@ -38,11 +38,12 @@ class ModelHotel{
         $sentencia->execute(array($id));
     }
 
-    public function ModificarHotel($id,$nombre,$telefono,$direccion,$precio,$ocupado,$id_destino){
+    public function ModificarHotel($id,$nombre,$telefono,$direccion,$precio,$idDestino,$ocupado){
         $sentencia= $this->db->prepare("UPDATE hotel SET nombre=?,telefono=?,direccion=?,precio=?,id_destino=?,ocupado=? WHERE id_hotel=?");
-        $sentencia->execute(array($nombre,$telefono,$diereccion,$precio,$id_destino,$ocupado,$id));
+        $sentencia->execute(array($nombre,$telefono,$diereccion,$precio,$idDestino,$ocupado,$id));
         
     }
+
     public function HotelesdeunDestino($id){
         $sentencia= $this->db->prepare("SELECT*FROM hotel WHERE id_destino=?");
         $sentencia->execute(array($id));
