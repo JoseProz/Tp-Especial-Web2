@@ -1,6 +1,6 @@
 <?php
-    require_once "./Models/ModelDestino.php";
-    require_once "./Views/ViewDestino.php";
+    require_once "./MVC/Models/ModelDestino.php";
+    require_once "./MVC/Views/ViewDestino.php";
     class ControllerDestino{
 
         private $model;

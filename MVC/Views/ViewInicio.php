@@ -7,7 +7,7 @@ class ViewInicio {
         $smarty = new Smarty();
         $smarty->assign('titulo',"Inicio");
         $smarty->assign('BASE',URL_DESTINO);
-        $smarty->display('templates/Inicio.tpl');
+        $smarty->display('./templates/Inicio.tpl');
     }
 }
 ?>

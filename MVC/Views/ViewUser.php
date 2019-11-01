@@ -13,7 +13,7 @@ class ViewUser {
         $smarty = new Smarty();
         $smarty->assign('titulo',"Login");
         $smarty->assign('BASE',URL_DESTINO);
-        $smarty->display('templates/login.tpl');
+        $smarty->display('./templates/login.tpl');
     }
 }
 

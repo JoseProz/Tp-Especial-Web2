@@ -12,7 +12,7 @@ class ViewHotel {
             $smarty->assign('titulo',"Mostrar Hoteles");
             $smarty->assign('BASE',BASE_URL);
             $smarty->assign('ver_hoteles',$hoteles);
-            $smarty->display('templates/verhoteles.tpl');
+            $smarty->display('./templates/verhoteles.tpl');
         }
 
     public function DisplayHotelesdeDestino($hoteles){
@@ -20,7 +20,7 @@ class ViewHotel {
         $smarty->assign('titulo',"Mostrar Hoteles");
         $smarty->assign('BASE',BASE_URL);
         $smarty->assign('ver_hoteles',$hoteles);
-        $smarty->display('templates/HotelesdeDestino.tpl');
+        $smarty->display('./templates/HotelesdeDestino.tpl');
     }
 
     }

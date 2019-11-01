@@ -1,9 +1,9 @@
 <?php
-    require_once "Controllers/ControllerDestino.php";
-    require_once "Controllers/ControllerUser.php";
-    require_once "Controllers/ControllerRegistro.php";
-    require_once "Controllers/ControllerInicio.php";
-    require_once "Controllers/ControllerHotel.php";
+    require_once "MVC/Controllers/ControllerDestino.php";
+    require_once "MVC/Controllers/ControllerUser.php";
+    require_once "MVC/Controllers/ControllerRegistro.php";
+    require_once "MVC/Controllers/ControllerInicio.php";
+    require_once "MVC/Controllers/ControllerHotel.php";
 
     $action = $_GET["action"];
     define("BASE", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
@@ -13,6 +13,7 @@
     define("URL_LOGIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/login');
     define("URL_LOGOUT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/logout');
     define("URL_IR", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/iniciarRegistro');
+    define("URL_VISITAHOTELES", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/hotelesVisita');
     $controller = new ControllerDestino();
     $controllerUser = new ControllerUser();
     $controllerInicio = new ControllerInicio();
@@ -71,6 +72,10 @@
             elseif($partesURL[0]=="iniciarVisita"){
                 $controllerInicio= new ControllerInicio();
                 $controllerInicio->getVisita();
+            }
+            elseif($partesURL[0]=="hotelesVisita"){
+                $controllerInicio= new ControllerInicio();
+                $controllerInicio->getVisitaHoteles();
             }
             elseif($partesURL[0]=="hoteles"){
                 $controllerHotel= new ControllerHotel();

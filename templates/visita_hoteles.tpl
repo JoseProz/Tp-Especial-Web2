@@ -14,14 +14,11 @@
           Ir a 
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="hoteles">Lista de Hoteles</a>
-          <a class="dropdown-item" href="destinos">Lista de Destinos</a>
+          <a class="dropdown-item" href="hotelesVisita">Lista de Hoteles</a>
+          <a class="dropdown-item" href="iniciarVisita">Lista de Destinos</a>
         </div>
       </li>
     </ul>
-     <form class="form-inline my-2 my-lg-0" action="logout" method="post">
-      <button class="btn btn-outline-success my-2 my-sm-0 btn-light" type="submit">logout</button>
-    </form>
   </div>
 </nav>
             <table class="table">
@@ -38,19 +35,11 @@
                 </thead>
 
 {foreach from=$ver_hoteles item=hotel}
-<strike><tr><th scope="row">{$hotel->id_hotel}</th>
-<td>{$hotel->nombre}</td>
-<td>{$hotel->telefono}</td>
-<td>{$hotel->direccion}</td>
-<td>{$hotel->precio}</td>
-<td>{$hotel->ocupado}</td>
-<td>{$hotel->id_destino}</td></strike>
 <tr><th scope="row">{$hotel->id_hotel}</th>
 <td>{$hotel->nombre}</td><td>{$hotel->telefono}</td>
 <td>{$hotel->direccion}</td><td>{$hotel->precio}</td>
 <td>{$hotel->ocupado}</td>
 <td>{$hotel->id_destino}</td>
-{/if}
 {/foreach}
 </table>
 </body>

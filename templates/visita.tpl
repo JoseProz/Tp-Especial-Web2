@@ -12,6 +12,15 @@
       <li class="nav-item ">
         <a class="nav-link" href="iniciarRegistro">Registrarse <span class="sr-only">(current)</span></a>
       </li>
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Ir a 
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="hotelesVisita">Lista de Hoteles</a>
+          <a class="dropdown-item" href="iniciarVisita">Lista de Destinos</a>
+        </div>
+      </li>
     </ul>
   </div>
 </nav>

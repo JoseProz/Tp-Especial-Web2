@@ -21,4 +21,10 @@ class ControllerInicio{
         $destinos= $this->modelVisita->GetVisita();
         $this->viewVisita->DisplayVisita($destinos);
     }
+    public function getVisitaHoteles(){
+        $hoteles= $this->modelVisita->GetVisitaHoteles();
+        $this->viewVisita->DisplayVisitaHoteles($hoteles);
+    }
+
+
 }

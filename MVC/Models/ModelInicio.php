@@ -14,4 +14,11 @@ class ModelInicio{
         $destinos= $datos->fetchAll(PDO::FETCH_OBJ);
         return $destinos;
     }
+    public function GetVisitaHoteles(){
+        $datos= $this->db->prepare('SELECT*FROM hotel');
+        $ok =$datos->execute();
+        if (!$ok) {var_dump($datos->errorinfo()); die;}
+        $hoteles= $datos->fetchAll(PDO::FETCH_OBJ);
+        return $hoteles;
+    }
 }

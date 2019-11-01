@@ -10,7 +10,7 @@ class ViewDestino{
         $smarty->assign('titulo',"MOSTRAR DESTINOS ");
         $smarty->assign('BASE',URL_DESTINO);
         $smarty->assign('destinos',$destinos);
-        $smarty->display('templates/ver_destinos.tpl');
+        $smarty->display('./templates/ver_destinos.tpl');
     }
 
     public function DisplayEdicion($destino,$id){
@@ -19,7 +19,7 @@ class ViewDestino{
         $smarty->assign('BASE',BASE);
         $smarty->assign('destino',$destino);
         $smarty->assign('id',$id);
-        $smarty->display('templates/editar_destinos.tpl');
+        $smarty->display('./templates/editar_destinos.tpl');
     }
 }
 

@@ -20,8 +20,7 @@ class ControllerRegistro{
         $email=$_POST['user'];
         if (isset($email) && ($email != " ")){
             $password=$_POST['pass'];
-        if (isset($password) && ($email != " ")){
-            if ($password!= " "){
+        if ($password != " "){
             $usuarios = $this->model->getUsuarios();
             foreach ($usuarios as $usuario) {
                 if (($email)==($usuario->email)){
@@ -38,6 +37,6 @@ class ControllerRegistro{
         }
         else
         $this->ViewRegistro->DisplayRegistro();
-        }
+        
     }
 }
