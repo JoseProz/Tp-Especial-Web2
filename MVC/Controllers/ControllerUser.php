@@ -1,6 +1,6 @@
 <?php
-require_once "./Models/ModelUser.php";
-require_once "./Views/ViewUser.php";
+require_once "./MVC/Models/ModelUser.php";
+require_once "./MVC/Views/ViewUser.php";
 
 class ControllerUser {
 
