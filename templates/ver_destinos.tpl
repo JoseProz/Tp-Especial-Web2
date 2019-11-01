@@ -1,7 +1,7 @@
 {include file="header.tpl"}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">ExploArgentina</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -10,23 +10,19 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown link
+          Ir a 
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="hoteles">Lista de Hoteles</a>
+          <a class="dropdown-item" href="destinos">Lista de Destinos</a>
         </div>
       </li>
     </ul>
+     <form class="form-inline my-2 my-lg-0" action="logout" method="post">
+      <button class="btn btn-outline-success my-2 my-sm-0 btn-light" type="submit">logout</button>
+    </form>
   </div>
 </nav>
 
@@ -41,6 +37,7 @@
             <th scope="col">Descripcion</th>
             <th scope="col">Temporada Alta</th>
             <th scope="col">Puntaje</th>
+             <th scope="col">Mostrar Hoteles</th>
             <th scope="col">borrar</th>
             </tr>
             </thead>
@@ -51,7 +48,7 @@
                <td>{$destino->descripcion}</td>
                <td>{$destino->temporada_alta}</td>
                <td>{$destino->puntaje}</td>
-               <td>- <a href='mostrarHoteles/{$destino->id_destino}'>Mostrar Hoteles</a></td>
+               <td><a href='mostrarHoteles/{$destino->id_destino}'>Mostrar Hoteles</a></td>
                <td><a href='borrarDestino/{$destino->id_destino}'>Borrar</a></td>
              </tr>
             {/foreach}

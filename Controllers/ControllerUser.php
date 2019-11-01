@@ -33,7 +33,7 @@ class ControllerUser {
     public function Logout(){
         session_start();
         session_destroy();
-        header("Location: " . URL_LOGIN);
+        header("Location: " . BASE);
     }
 
     //public function GetView(){

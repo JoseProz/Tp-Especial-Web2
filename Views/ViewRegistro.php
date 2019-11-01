@@ -9,5 +9,5 @@ class ViewRegistro {
         $smarty->assign('BASE',URL_DESTINO);
         $smarty->display('templates/datosUser.tpl');
     }
-}
+}    
 ?>

@@ -18,11 +18,11 @@ class ControllerRegistro{
     }
     public function ingresarDatos(){
         $email=$_POST['user'];
-        $password=$_POST['pass'];
-        $usuarios = $this->model->getUsuarios();
-        
-
-        
+        if (isset($email) && ($email != " ")){
+            $password=$_POST['pass'];
+        if (isset($password) && ($email != " ")){
+            if ($password!= " "){
+            $usuarios = $this->model->getUsuarios();
             foreach ($usuarios as $usuario) {
                 if (($email)==($usuario->email)){
                     $this->registrar();die;
@@ -31,5 +31,13 @@ class ControllerRegistro{
             }
             $this->modelRegistro->InsertarDatos($email,$password);
             header("Location:" .URL_LOGIN);
+            }
+            else{
+            $this->ViewRegistro->DisplayRegistro();
+            }
+        }
+        else
+        $this->ViewRegistro->DisplayRegistro();
+        }
     }
 }

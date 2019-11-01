@@ -24,22 +24,34 @@
     </form>
   </div>
 </nav>
-    <table class="table">
+            <table class="table">
                 <thead class="thead-dark">
                     <tr>
+                    <th scope="col">#id</th>
                     <th scope="col">Hotel</th>
                     <th scope="col">Teléfono</th>
                     <th scope="col">Dirección</th>
                     <th scope="col">Precio</th>
                     <th scope="col">ocupado</th>
-                     <th scope="col">ID Destino</th>
+                    <th scope="col">id_destino</th>
                     </tr>
                 </thead>
-    {foreach from=$ver_hoteles item=hotel}
-    {if $hotel->ocupado eq 1}
-    <strike><tr><td>{$hotel->nombre}</td><td>{$hotel->telefono}</td><td>{$hotel->direccion}</td><td>{$hotel->precio}</td><td>{$hotel->ocupado}</td><td>{$hotel->id_destino}</td></tr>
-    {else}
-    <tr><td>{$hotel->nombre}</td><td>{$hotel->telefono}</td><td>{$hotel->direccion}</td><td>{$hotel->precio}</td><td>{$hotel->ocupado}</td><td>{$hotel->id_destino}</td></tr>
-    {/if}
 
+{foreach from=$ver_hoteles item=hotel}
+<strike><tr><th scope="row">{$hotel->id_hotel}</th>
+<td>{$hotel->nombre}</td>
+<td>{$hotel->telefono}</td>
+<td>{$hotel->direccion}</td>
+<td>{$hotel->precio}</td>
+<td>{$hotel->ocupado}</td>
+<td>{$hotel->id_destino}</td></strike>
+<tr><th scope="row">{$hotel->id_hotel}</th>
+<td>{$hotel->nombre}</td><td>{$hotel->telefono}</td>
+<td>{$hotel->direccion}</td><td>{$hotel->precio}</td>
+<td>{$hotel->ocupado}</td>
+<td>{$hotel->id_destino}</td>
+{/if}
 {/foreach}
+</table>
+</body>
+</html>

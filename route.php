@@ -8,6 +8,7 @@
     $action = $_GET["action"];
     define("BASE", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
     define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/hoteles');
+    define("URL_HOTELESDESTINO", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/mostrarHoteles');
     define("URL_DESTINO", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/destinos');
     define("URL_LOGIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/login');
     define("URL_LOGOUT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/logout');
@@ -32,7 +33,7 @@
             else if($partesURL[0] == "insertar"){
                 $controller->InsertarDestino();
 
-            }elseif($partesURL[0] == "borrar") {
+            }elseif($partesURL[0] == "borrarDestino") {
                 $controller->BorrarDestino($partesURL[1]);
 
             }
