@@ -1,7 +1,7 @@
 <?php
-require_once "./Models/ModelRegistro.php";
-require_once "./Views/ViewRegistro.php";
-require_once "./Models/ModelUser.php";
+require_once "./MVC/Models/ModelRegistro.php";
+require_once "./MVC/Views/ViewRegistro.php";
+require_once "./MVC/Models/ModelUser.php";
 class ControllerRegistro{
     private $modelRegistro;
     private $viewRegistro;

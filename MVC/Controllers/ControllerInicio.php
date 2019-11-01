@@ -1,8 +1,8 @@
 <?php
-require_once "./Models/ModelInicio.php";
-require_once "./Views/ViewInicio.php";
-require_once "./Views/ViewRegistro.php";
-require_once "./Views/ViewVisita.php";
+require_once "./MVC/Models/ModelInicio.php";
+require_once "./MVC/Views/ViewInicio.php";
+require_once "./MVC/Views/ViewRegistro.php";
+require_once "./MVC/Views/ViewVisita.php";
 class ControllerInicio{
     private $modelVisita;
     private $viewInicio;
