@@ -18,9 +18,9 @@ class ControllerRegistro{
     }
     public function ingresarDatos(){
         $email=$_POST['user'];
+        $password=$_POST['pass'];
         if (isset($email) && ($email != " ")){
-            $password=$_POST['pass'];
-        if ($password != " "){
+        if ($password!= " "){
             $usuarios = $this->model->getUsuarios();
             foreach ($usuarios as $usuario) {
                 if (($email)==($usuario->email)){
@@ -35,8 +35,8 @@ class ControllerRegistro{
             $this->ViewRegistro->DisplayRegistro();
             }
         }
-        else
+        else{
         $this->ViewRegistro->DisplayRegistro();
-        
+        }
     }
 }
