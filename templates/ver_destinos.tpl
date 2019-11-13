@@ -37,8 +37,10 @@
             <th scope="col">Descripcion</th>
             <th scope="col">Temporada Alta</th>
             <th scope="col">Puntaje</th>
+            <th scope="col">ID</th>
              <th scope="col">Mostrar Hoteles</th>
-            <th scope="col">borrar</th>
+            <th scope="col">Borrar</th>
+            <th scope="col">Editar</th>
             </tr>
             </thead>
             {foreach from=$destinos  item=destino}
@@ -48,8 +50,10 @@
                <td>{$destino->descripcion}</td>
                <td>{$destino->temporada_alta}</td>
                <td>{$destino->puntaje}</td>
+               <td><a href='iddestino/{$destino->id_destino}'>Mostrar destino</a></td>
                <td><a href='mostrarHoteles/{$destino->id_destino}'>Mostrar Hoteles</a></td>
                <td><a href='borrarDestino/{$destino->id_destino}'>Borrar</a></td>
+               <td><a href='editarDestino/{$destino->id_destino}'>Editar</a></td>
              </tr>
             {/foreach}
             </tbody>
