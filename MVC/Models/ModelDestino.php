@@ -13,12 +13,13 @@
             $obj = $sentencia->fetchAll(PDO::FETCH_OBJ);
             return $obj;
             }
-        function getIdDestino($id){
-            $sentencia =$this->db->prepare("SELECT  FROM destino WHERE id_destino=?");
-            $sentencia->execute(array($id));
-            $destino=$sentencia->fetch(PDO::FETCH_OBJ);
-            return $destino;
-        }
+            function getIdDestino($id){
+                $sentencia =$this->db->prepare("SELECT * FROM destino WHERE id_destino=?");
+                $sentencia->execute(array($id));
+                $destino=$sentencia->fetch(PDO::FETCH_OBJ);
+                return $destino;
+            }
+     
 
             public function InsertarDestino($nombre,$descripcion,$temporada_alta,$puntaje ){
                 $sentencia = $this->db->prepare("INSERT INTO destino(nombre,descripcion,temporada_alta,puntaje) VALUES(?,?,?,?)");

@@ -12,13 +12,14 @@ class ViewDestino{
         $smarty->assign('destinos',$destinos);
         $smarty->display('./templates/ver_destinos.tpl');
     }
-    public function DisplayIdDestino($id_destino){
+    public function DisplayIdDestino($id){
         $smarty = new Smarty();
         $smarty->assign('titulo',"DESTINO DEL ID : ");
-        $smarty->assign('BASE',URL_IDDESTINO);
-        $smarty->assign('iddestino',$id_destino);
+        $smarty->assign('BASE',BASE);
+        $smarty->assign('iddestino',$id);
         $smarty->display('./templates/ver_Iddestino.tpl');
     }
+
     public function DisplayEdicion($destino,$id){
         $smarty = new Smarty();
         $smarty->assign('titulo',"Modificar Datos");
@@ -26,6 +27,13 @@ class ViewDestino{
         $smarty->assign('destino',$destino);
         $smarty->assign('id',$id);
         $smarty->display('./templates/editar_destinos.tpl');
+    }
+    public function ModificarDestino($destino){
+        $smarty = new Smarty();
+        $smarty->assign('titulo',"modifico destino");
+        $smarty->assign('BASE',BASE);
+        $smarty->assign('destino',$destino);
+        $smarty->display('./templates/modificar_destino.tpl');
     }
 }
 

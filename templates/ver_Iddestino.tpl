@@ -40,17 +40,15 @@
             <th scope="col">borrar</th>
             </tr>
             </thead>
-            {foreach from=$iddestino  item=destino}
             <tr>
-            <th scope="row">{$destino->id_destino}</th>
-               <td>{$destino->nombre}</td>
-               <td>{$destino->descripcion}</td>
-               <td>{$destino->temporada_alta}</td>
-               <td>{$destino->puntaje}</td> 
-               <td><a href='mostrarHoteles/{$destino->id_destino}'>Mostrar Hoteles</a></td>
-               <td><a href='borrarDestino/{$destino->id_destino}'>Borrar</a></td>
+            <th scope="row">{$iddestino->id_destino}</th>
+               <td>{$iddestino->nombre}</td>
+               <td>{$iddestino->descripcion}</td>
+               <td>{$iddestino->temporada_alta}</td>
+               <td>{$iddestino->puntaje}</td> 
+               <td><a href='mostrarHoteles/{$iddestino->id_destino}'>Mostrar Hoteles</a></td>
+               <td><a href='borrarDestino/{$iddestino->id_destino}'>Borrar</a></td>
              </tr>
-            {/foreach}
             </tbody>
         </table>
 
@@ -101,4 +99,10 @@
   </div>
 </div>
 </div>
+<<<<<<< HEAD
 </div>
+=======
+</div>
+</body>
+</html>
+>>>>>>> 59a61183aaf89168ec98f8b420413e3d1b159811

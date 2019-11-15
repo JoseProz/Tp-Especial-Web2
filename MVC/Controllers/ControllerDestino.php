@@ -16,10 +16,9 @@
             $this->view->DisplayDestino($destinos);
         }
         public function getIdDestino($id){
-            $destino = $this->model->getDestino($id);
+            $destino = $this->model->getIdDestino($id);
             $this->view->DisplayIdDestino($destino);
         }
-        
 
         public function InsertarDestino(){
             
@@ -47,6 +46,12 @@
              $destinos =$this->model->ModificarItem($_POST["id_destino"],$_POST["nombre"],$_POST["descripcion"],$_POST["temporada_alta"],$_POST["puntaje"]);
              header("location:" .URL_DESTINO);
             }
+        
+            public function ModificarItemDestino($id){
+                $destino = $this->model->getIdDestino($id);
+                $this->view->ModificarDestino($destino);
+                }
+    
 
             
             
