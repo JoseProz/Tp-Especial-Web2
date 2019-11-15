@@ -8,6 +8,7 @@
     $action = $_GET["action"];
     define("BASE", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
     define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/hoteles');
+    define("URL_IDDESTINO", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/mostrardestino');
     define("URL_HOTELESDESTINO", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/mostrarHoteles');
     define("URL_DESTINO", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/destinos');
     define("URL_LOGIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/login');
@@ -30,6 +31,9 @@
             }
             if($partesURL[0] == "destinos"){
             $controller-> getDestino();
+            }
+            else if($partesURL[0] == "iddestino"){
+                $controller->getIdDestino($partesURL[1]);
             }
             else if($partesURL[0] == "insertar"){
                 $controller->InsertarDestino();

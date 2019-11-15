@@ -15,6 +15,11 @@
             $destinos = $this->model->getDestino();
             $this->view->DisplayDestino($destinos);
         }
+        public function getIdDestino($id){
+            $destino = $this->model->getDestino($id);
+            $this->view->DisplayIdDestino($destino);
+        }
+        
 
         public function InsertarDestino(){
             

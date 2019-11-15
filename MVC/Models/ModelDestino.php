@@ -8,16 +8,16 @@
             }
 
         function getDestino(){
-            $sentencia =$this->db->prepare("SELECT * FROM destino");
+            $sentencia =$this->db->prepare("SELECT * FROM  destino ORDER BY destino.puntaje asc");
             $sentencia->execute();
             $obj = $sentencia->fetchAll(PDO::FETCH_OBJ);
             return $obj;
             }
         function getIdDestino($id){
-            $sentencia =$this->db->prepare("SELECT * FROM destino WHERE id_destino=?");
+            $sentencia =$this->db->prepare("SELECT  FROM destino WHERE id_destino=?");
             $sentencia->execute(array($id));
-            return $sentencia->fetch(PDO::FETCH_OBJ);
-            
+            $destino=$sentencia->fetch(PDO::FETCH_OBJ);
+            return $destino;
         }
 
             public function InsertarDestino($nombre,$descripcion,$temporada_alta,$puntaje ){
