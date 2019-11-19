@@ -6,8 +6,16 @@ require_once("./api/JSONView.php");
 class TareasApiController extends ApiController{
   
     public function getComentarios($params = null) {
-        $tareas = $this->model->getComentarios();
-        $this->view->response($tareas, 200);
+
+        $id= $params[':ID']
+        $comentarios = $this->model->getComentarios($id);
+
+        if ($comentarios){
+            $this->view->response($comentarios, 200);
+        }
+        else{
+            $this->view->response ("no existe el hotel", 404);
+        }
     }
 
 }
