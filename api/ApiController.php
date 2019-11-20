@@ -13,7 +13,7 @@ abstract class ApiController{
                                                     //de archivos locales o URL tradicionales, le permite 
                                                     //usar la php://input dirección especial para recuperar 
                                                     //datos JSON como una cadena 
-        $this->model = new ComentarioModel();
+        $this->model = new comentarioModel();
     }
 
     public function getData(){

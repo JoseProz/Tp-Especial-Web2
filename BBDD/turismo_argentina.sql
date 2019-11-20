@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-10-2019 a las 22:05:47
+-- Tiempo de generación: 20-11-2019 a las 20:22:50
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.13
 
@@ -25,6 +25,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `comentario`
+--
+
+CREATE TABLE `comentario` (
+  `id_comentario` int(11) NOT NULL,
+  `id_hotel` int(12) NOT NULL,
+  `id_usuario` int(12) NOT NULL,
+  `mensaje` varchar(200) NOT NULL,
+  `valoracion` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `comentario`
+--
+
+INSERT INTO `comentario` (`id_comentario`, `id_hotel`, `id_usuario`, `mensaje`, `valoracion`) VALUES
+(1, 9, 8, 'River la concha de tu madre!', 6);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `destino`
 --
 
@@ -42,11 +63,10 @@ CREATE TABLE `destino` (
 
 INSERT INTO `destino` (`id_destino`, `nombre`, `descripcion`, `temporada_alta`, `puntaje`) VALUES
 (2, 'Lujan', 'Catedral', 'Octubre', 6),
-(3, 'Chitorra', 'Ir a el EDAL 13hs', 'w', 7),
+(3, 'Tandil', 'Ciudad entre Sierras', 'julio', 8),
 (5, 'Libertador', 'Ir a la Bianqueria', 'w', 6),
 (7, 'Bahia Blanca', 'Sur de la Provincia', 'Julio', 5),
-(8, 'Internacional', 'Ir a el EDAL 13hs', 'kk', 8),
-(9, 'Azul', 'gato', 'dd', 3);
+(8, 'Azul', 'Ciudad Fantasma', 'ninguna', 1);
 
 -- --------------------------------------------------------
 
@@ -72,9 +92,8 @@ INSERT INTO `hotel` (`id_hotel`, `nombre`, `telefono`, `direccion`, `precio`, `i
 (8, 'Micaela', 2147483647, 'Mitre', 3500, 3, 0),
 (9, 'Libertador', 32323232, 'Mitre', 5555, 3, 1),
 (10, 'Internacional', 324342342, 'pinto', 5555, 3, 0),
-(11, 'hhhhh', 32323232, 'Mitre', 6000, 3, NULL),
 (12, 'Copahue', 44444, 'Mitre', 2650, 3, 0),
-(13, 'Micaela', 43443, 'pinto 1345', 8000, 2, 0),
+(13, 'Internacional', 0, '', 0, 2, 0),
 (14, 'sheraton', 232323, 'Valdez', 5900, 2, 0);
 
 -- --------------------------------------------------------
@@ -102,11 +121,21 @@ INSERT INTO `usuario` (`id_usuario`, `email`, `password`) VALUES
 (6, 'nahuel', '$2y$10$UQNr70U6G.KCbX4HZ3L5a.neRND.VEoaN8HuqwELlxmxM/2PlCSJ2'),
 (7, 'maximiliano', '$2y$10$QLao3NPCitnFIMHU8FOQ5uBLyOZkAaNzB8Xo7ChOqKzwOr9EwlTgG'),
 (8, 'maxisantomil@hotmail.com', '$2y$10$oYD9LDH1PZgO5wUh/UlnpeXu9TX9owdBgfJ2Xo9SUDglMGrmsVFte'),
-(12, 'jose', '$2y$10$hLreteoxYOkayGb7RdM47O34MKwKk.oysd3lML777tY03Ozb9BqyO');
+(12, 'jose', '$2y$10$hLreteoxYOkayGb7RdM47O34MKwKk.oysd3lML777tY03Ozb9BqyO'),
+(13, '', '$2y$10$rdFEvGnLu50c2Y53txef/OAWzXgXg3k4HOA4FEnAhbvR18Qa9tVly'),
+(14, 'pepe@gmail.com', '$2y$10$7NmwOZcqMrJiUjnFo44RD.zw7.gz1mFBsvAe8uAE/RpHP9wiuXccu');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD PRIMARY KEY (`id_comentario`),
+  ADD KEY `id_hotel` (`id_hotel`),
+  ADD KEY `id_usuario` (`id_usuario`);
 
 --
 -- Indices de la tabla `destino`
@@ -134,10 +163,16 @@ ALTER TABLE `usuario`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `destino`
 --
 ALTER TABLE `destino`
-  MODIFY `id_destino` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_destino` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `hotel`
@@ -149,11 +184,18 @@ ALTER TABLE `hotel`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`),
+  ADD CONSTRAINT `comentario_ibfk_2` FOREIGN KEY (`id_hotel`) REFERENCES `hotel` (`id_hotel`);
 
 --
 -- Filtros para la tabla `hotel`

@@ -1,14 +1,15 @@
 <?php
-require_once("MVC/Models/ModelComentario.php");
+require_once("./MVC/Models/ModelComentario.php");
 require_once("./api/ApiController.php");
 require_once("./api/JSONView.php");
 
-class TareasApiController extends ApiController{
+class ComentarioApiController extends ApiController{
   
     public function getComentarios($params = null) {
 
-        $id= $params[':ID']
+        $id= $params[':ID'];
         $comentarios = $this->model->getComentarios($id);
+        
 
         if ($comentarios){
             $this->view->response($comentarios, 200);
