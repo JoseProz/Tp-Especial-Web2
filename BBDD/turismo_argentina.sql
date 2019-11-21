@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-11-2019 a las 20:22:50
+-- Tiempo de generación: 21-11-2019 a las 06:26:05
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.13
 
@@ -41,7 +41,8 @@ CREATE TABLE `comentario` (
 --
 
 INSERT INTO `comentario` (`id_comentario`, `id_hotel`, `id_usuario`, `mensaje`, `valoracion`) VALUES
-(1, 9, 8, 'River la concha de tu madre!', 6);
+(1, 8, 8, 'Boca te amo!', 6),
+(2, 8, 1, 'Hermoso Hotel, muy buena atención', 8);
 
 -- --------------------------------------------------------
 
@@ -51,7 +52,7 @@ INSERT INTO `comentario` (`id_comentario`, `id_hotel`, `id_usuario`, `mensaje`, 
 
 CREATE TABLE `destino` (
   `id_destino` int(11) NOT NULL,
-  `nombre` varchar(18) NOT NULL,
+  `nombreDestino` varchar(18) NOT NULL,
   `descripcion` varchar(200) NOT NULL,
   `temporada_alta` varchar(28) NOT NULL,
   `puntaje` int(2) NOT NULL
@@ -61,7 +62,7 @@ CREATE TABLE `destino` (
 -- Volcado de datos para la tabla `destino`
 --
 
-INSERT INTO `destino` (`id_destino`, `nombre`, `descripcion`, `temporada_alta`, `puntaje`) VALUES
+INSERT INTO `destino` (`id_destino`, `nombreDestino`, `descripcion`, `temporada_alta`, `puntaje`) VALUES
 (2, 'Lujan', 'Catedral', 'Octubre', 6),
 (3, 'Tandil', 'Ciudad entre Sierras', 'julio', 8),
 (5, 'Libertador', 'Ir a la Bianqueria', 'w', 6),
@@ -89,11 +90,10 @@ CREATE TABLE `hotel` (
 --
 
 INSERT INTO `hotel` (`id_hotel`, `nombre`, `telefono`, `direccion`, `precio`, `id_destino`, `ocupado`) VALUES
-(8, 'Micaela', 2147483647, 'Mitre', 3500, 3, 0),
-(9, 'Libertador', 32323232, 'Mitre', 5555, 3, 1),
+(8, 'Micaela', 2147483647, 'Mitre', 3500, 3, 1),
+(9, 'Libertador', 32323232, 'Mitre', 5555, 3, 0),
 (10, 'Internacional', 324342342, 'pinto', 5555, 3, 0),
 (12, 'Copahue', 44444, 'Mitre', 2650, 3, 0),
-(13, 'Internacional', 0, '', 0, 2, 0),
 (14, 'sheraton', 232323, 'Valdez', 5900, 2, 0);
 
 -- --------------------------------------------------------
@@ -166,7 +166,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `destino`
