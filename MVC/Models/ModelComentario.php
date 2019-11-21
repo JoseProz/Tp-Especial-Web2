@@ -7,7 +7,7 @@
         }
 
         function getComentarios($id){
-            $sentencia=$this->db->prepare('SELECT comentario.mensaje,comentario.valoracion, usuario.email, usuario.tipo FROM comentario  INNER JOIN hotel ON  comentario.id_hotel= hotel.id_hotel INNER JOIN usuario ON usuario.id_usuario=comentario.id_usuario WHERE hotel.id_hotel=?');
+            $sentencia=$this->db->prepare('SELECT comentario.mensaje,comentario.valoracion,comentario.fecha,usuario.email, usuario.tipo FROM comentario  INNER JOIN hotel ON  comentario.id_hotel= hotel.id_hotel INNER JOIN usuario ON usuario.id_usuario=comentario.id_usuario  WHERE hotel.id_hotel=? ORDER BY comentario.fecha desc');
             $sentencia-> execute(array($id));
             $obj=$sentencia->fetchAll(PDO::FETCH_OBJ);
             return $obj;
