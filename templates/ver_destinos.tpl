@@ -32,12 +32,11 @@
         <table class="table">
         <thead class="thead-dark">
             <tr>
-            <th scope="col">#id</th>
-            <th scope="col">Destino</th>
+            <th scope="col">Ciudad</th>
             <th scope="col">Descripcion</th>
             <th scope="col">Temporada Alta</th>
             <th scope="col">Puntaje</th>
-            <th scope="col">ID</th>
+            <th scope="col">Mostrar Ciudad</th>
              <th scope="col">Mostrar Hoteles</th>
             <th scope="col">Borrar</th>
             <th scope="col">Editar</th>
@@ -45,53 +44,33 @@
             </thead>
             {foreach from=$destinos  item=destino}
             <tr>
-            <th scope="row">{$destino->id_destino}</th>
-               <td>{$destino->nombre}</td>
+               <td>{$destino->nombreDestino}</td>
                <td>{$destino->descripcion}</td>
                <td>{$destino->temporada_alta}</td>
                <td>{$destino->puntaje}</td> 
-               <td><a href='iddestino/{$destino->id_destino}'>Mostrar destino</a></td>
+               <td><a href='iddestino/{$destino->id_destino}'>Mostrar Ciudad</a></td>
                <td><a href='mostrarHoteles/{$destino->id_destino}'>Mostrar Hoteles</a></td>
                <td><a href='borrarDestino/{$destino->id_destino}'>Borrar</a></td>
                <td><a href='editarDestino/{$destino->id_destino}'>Editar</a></td>
              </tr>
             {/foreach}
-            </tbody>
-        </table>
-
+            <tr>
               <form class="form-inline"action="insertar" method="post">
-            <div class="form-group mx-sm-3 mb-2">
-                <input type="text" class="form-control" name="nombre"placeholder="Destino">
-            </div>
-            <div class="form-group mx-sm-3 mb-2">
-                <input type="text" class="form-control" name="descripcion"placeholder="Descripcion">
-            </div>
-            <div class="form-group mx-sm-3 mb-2">
-                <input type="text" class="form-control" name="temporada_alta"placeholder="Temporada Alta">
-            </div>
-            <div class="form-group mx-sm-3 mb-2">
-                <input type="text" class="form-control" name="puntaje"placeholder="Puntaje">
-            </div>
-            <button type="submit" class="btn btn-primary mb-2">Insertar</button>
-        </form>
-        {****************************************************************************************************}
-         <form class="form-inline"action="editarTabla" method="post">
-           <div class="form-group mx-sm mb-2">
-                <input type="number" class="form-control" name="id_destino"placeholder="ID">
-            </div>
-            <div class="form-group mx-sm mb-2">
-                <input type="text" class="form-control" name="nombre"placeholder="Destino">
-            </div>
-            <div class="form-group mx-sm mb-2">
-                <input type="text" class="form-control" name="descripcion"placeholder="Descripcion">
-            </div>
-            <div class="form-group mx-sm mb-2">
-                <input type="text" class="form-control" name="temporada_alta"placeholder="Temporada Alta">
-            </div>
-            <div class="form-group mx-sm mb-2">
-                <input type="text" class="form-control" name="puntaje"placeholder="Puntaje">
-            </div>
-            <button type="submit" class="btn btn-primary mb-2">Editar</button>
-        </form>
+                <div class="form-group mx-sm-3 mb-2">
+                    <td><input type="text" class="form-control" name="nombre"placeholder="Destino"></td>
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <td><input type="text" class="form-control" name="descripcion"placeholder="Descripcion"></td>
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <td><input type="text" class="form-control" name="temporada_alta"placeholder="Temporada Alta"></td>
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <td><input type="text" class="form-control" name="puntaje"placeholder="Puntaje"></td>
+                </div>
+                <td><button type="submit" class="btn btn-primary mb-2">Insertar</button></td>
+              </form>
+            </tr>
+            </table>
     </body>
 </html>

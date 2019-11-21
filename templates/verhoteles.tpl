@@ -27,33 +27,32 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
-                    <th scope="col">#id</th>
                     <th scope="col">Hotel</th>
                     <th scope="col">Teléfono</th>
                     <th scope="col">Dirección</th>
                     <th scope="col">Precio</th>
                     <th scope="col">ocupado</th>
-                    <th scope="col">id_destino</th>
+                    <th scope="col">Ciudad</th>
                     </tr>
                 </thead>
 
 {foreach from=$ver_hoteles item=hotel}
 {if $hotel->ocupado eq 1}
-<strike><tr><th scope="row">{$hotel->id_hotel}</th>
+<strike><tr>
 <td>{$hotel->nombre}</td>
 <td>{$hotel->telefono}</td>
 <td>{$hotel->direccion}</td>
 <td>{$hotel->precio}</td>
 <td>{$hotel->ocupado}</td>
-<td>{$hotel->id_destino}</td></strike>
-<td><a href='inicializar/{$hotel->id_hotel}'>Inicializar</a> -<a href='borrarHotel/{$hotel->id_hotel}'>Borrar</a></td></tr>
+<td>{$hotel->nombreDestino}</td></strike>
+<td><a href='inicializar/{$hotel->id_hotel}'>Inicializar</a></td><td><a href='borrarHotel/{$hotel->id_hotel}'>Borrar</a></td></tr>
 {else}
-<tr><th scope="row">{$hotel->id_hotel}</th>
+<tr>
 <td>{$hotel->nombre}</td><td>{$hotel->telefono}</td>
 <td>{$hotel->direccion}</td><td>{$hotel->precio}</td>
 <td>{$hotel->ocupado}</td>
-<td>{$hotel->id_destino}</td>
-<td><a href='finalizar/{$hotel->id_hotel}'>Ocupado Totalidad</a>- <a href='borrarHotel/{$hotel->id_hotel}'>Borrar</a></td></tr>
+<td>{$hotel->nombreDestino}</td>
+<td><a href='finalizar/{$hotel->id_hotel}'>Ocupado Totalidad</a></td><td><a href='borrarHotel/{$hotel->id_hotel}'>Borrar</a></td></tr>
 {/if}
 
 {/foreach}

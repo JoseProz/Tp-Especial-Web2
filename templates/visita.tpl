@@ -38,7 +38,7 @@
             {foreach from=$ver_destinos  item=destino}
             <tr>
             <th scope="row">{$destino->id_destino}</th>
-               <td>{$destino->nombre}</td>
+               <td>{$destino->nombreDestino}</td>
                <td>{$destino->descripcion}</td>
                <td>{$destino->temporada_alta}</td>
                <td>{$destino->puntaje}</td>

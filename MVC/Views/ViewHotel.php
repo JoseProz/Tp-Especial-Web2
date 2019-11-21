@@ -23,6 +23,14 @@ class ViewHotel {
         $smarty->display('./templates/HotelesdeDestino.tpl');
     }
 
+    public function DisplayHotel($id){
+        $smarty = new Smarty();
+        $smarty->assign('titulo',"Hotel");
+        $smarty->assign('BASE',BASE);
+        $smarty->assign('hotel',$id);
+        $smarty->display('./templates/verHotel.tpl');
+    }
+
     }
     
 

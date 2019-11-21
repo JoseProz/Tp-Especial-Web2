@@ -22,7 +22,7 @@
      
 
             public function InsertarDestino($nombre,$descripcion,$temporada_alta,$puntaje ){
-                $sentencia = $this->db->prepare("INSERT INTO destino(nombre,descripcion,temporada_alta,puntaje) VALUES(?,?,?,?)");
+                $sentencia = $this->db->prepare("INSERT INTO destino(nombreDestino,descripcion,temporada_alta,puntaje) VALUES(?,?,?,?)");
                 $sentencia->execute(array($nombre,$descripcion,$temporada_alta,$puntaje ));
             }
             public function BorrarDestino($id){
@@ -30,7 +30,7 @@
                 $sentencia->execute(array($id));
         }
         public function ModificarItem($id,$nombre,$descripcion,$temp,$puntaje){
-            $sentencia= $this->db->prepare("UPDATE destino SET nombre=?,descripcion=?,temporada_alta=?,puntaje=? WHERE id_destino=?");
+            $sentencia= $this->db->prepare("UPDATE destino SET nombreDestino=?,descripcion=?,temporada_alta=?,puntaje=? WHERE id_destino=?");
             $sentencia->execute(array($nombre,$descripcion,$temp,$puntaje, $id));
             
         }

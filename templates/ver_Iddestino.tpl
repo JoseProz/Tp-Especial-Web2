@@ -31,8 +31,7 @@
  <table class="table">
         <thead class="thead-dark">
             <tr>
-            <th scope="col">#id</th>
-            <th scope="col">Destino</th>
+            <th scope="col">Ciudad</th>
             <th scope="col">Descripcion</th>
             <th scope="col">Temporada Alta</th>
             <th scope="col">Puntaje</th>
@@ -41,14 +40,14 @@
             </tr>
             </thead>
             <tr>
-            <th scope="row">{$iddestino->id_destino}</th>
-               <td>{$iddestino->nombre}</td>
+               <td>{$iddestino->nombreDestino}</td>
                <td>{$iddestino->descripcion}</td>
                <td>{$iddestino->temporada_alta}</td>
                <td>{$iddestino->puntaje}</td> 
                <td><a href='mostrarHoteles/{$iddestino->id_destino}'>Mostrar Hoteles</a></td>
                <td><a href='borrarDestino/{$iddestino->id_destino}'>Borrar</a></td>
              </tr>
+            
             </tbody>
         </table>
 
@@ -99,10 +98,6 @@
   </div>
 </div>
 </div>
-<<<<<<< HEAD
-</div>
-=======
 </div>
 </body>
 </html>
->>>>>>> 59a61183aaf89168ec98f8b420413e3d1b159811

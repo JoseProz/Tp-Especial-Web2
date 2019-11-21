@@ -46,6 +46,10 @@
                 $controllerHotel=new controllerHotel();
                 $controllerHotel->HotelesdeunDestino($partesURL[1]);
             }
+            elseif($partesURL[0]=="mostrarHotel"){
+                $controllerHotel=new controllerHotel();
+                $controllerHotel->getHotel($partesURL[1]);
+            }
             elseif($partesURL[0] == "editarHotel") {
                 $controllerHotel=new controllerHotel();
                 $controllerHotel->ModificarHotel();

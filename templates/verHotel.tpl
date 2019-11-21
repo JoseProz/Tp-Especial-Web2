@@ -1,4 +1,5 @@
 {include file="header.tpl"}
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand" href="#">ExploArgentina</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,35 +25,34 @@
     </form>
   </div>
 </nav>
-<table class="table">
+
+
+
+ <table class="table">
         <thead class="thead-dark">
             <tr>
-            <th scope="col">Destino</th>
-            <th scope="col">Descripcion</th>
-            <th scope="col">Temporada Alta</th>
-            <th scope="col">Puntaje</th>
-             <th scope="col">Mostrar Hoteles</th>
-            <th scope="col">borrar</th>
+            <th scope="col">#id</th>
+            <th scope="col">Hotel</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Precio</th>
+             <th scope="col">Ocupado</th>
             </tr>
             </thead>
             <tr>
-               <td>{$destino->nombreDestino}</td>
-               <td>{$destino->descripcion}</td>
-               <td>{$destino->temporada_alta}</td>
-               <td>{$destino->puntaje}</td> 
+            <th scope="row">{$hotel->id_hotel}</th>
+               <td>{$hotel->nombre}</td>
+               <td>{$hotel->telefono}</td>
+               <td>{$hotel->direccion}</td>
+               <td>{$hotel->precio}</td>
+                <td>{$hotel->ocupado}</td>
+               {* isset($id_hotel) ? $id_hotel : ''*} 
              </tr>
+             <input type="hidden" id="id_hotel" value="{$hotel->id_hotel}">
             </tbody>
-            <tr>
-        <form class="form-inline"action="editarTabla" method="post">
-            <input type="hidden" name="id_destino" value="{$destino->id_destino}">
-            <td><input type="text" name="nombre" value="{$destino->nombreDestino}"></td>
-            <td><input type="text" name="descripcion" value="{$destino->descripcion}"></td>
-            <td><input type="text"  name="temporada_alta" value="{$destino->temporada_alta}"></td>
-            <td><input type="number" name="puntaje" value="{$destino->puntaje}"></td>
-            <td><button type="submit" class="btn btn-primary mb-2">Editar</button></td>
-        </form>
         </table>
-   
 
-    </body>
+         {include file="vue/comentarios.tpl"}
+        <script src="./js/comentarios.js"></script>
+</body>
 </html>

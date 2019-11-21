@@ -10,12 +10,19 @@ class ModelHotel{
     }
 
     public function GetHoteles(){
-        $datos= $this->db->prepare('SELECT*FROM hotel');
+        $datos= $this->db->prepare('SELECT h.*, d.nombreDestino, d.id_destino FROM hotel h INNER JOIN destino d ON d.id_destino=h.id_destino');
         $ok =$datos->execute();
         if (!$ok) {var_dump($datos->errorinfo()); die;}
         $hoteles= $datos->fetchAll(PDO::FETCH_OBJ);
 
         return $hoteles;
+    }
+
+    function getHotel($id){
+        $sentencia =$this->db->prepare("SELECT * FROM hotel WHERE id_hotel=?");
+        $sentencia->execute(array($id));
+        $hotel=$sentencia->fetch(PDO::FETCH_OBJ);
+        return $hotel;
     }
 
     public function InsertarHotel($nombre,$telefono,$direccion,$precio,$ocupado,$id_destino){
@@ -45,7 +52,8 @@ class ModelHotel{
     }
 
     public function HotelesdeunDestino($id){
-        $sentencia= $this->db->prepare("SELECT*FROM hotel WHERE id_destino=?");
+        //'SELECT comentario.mensaje,comentario.valoracion, usuario.email FROM comentario  INNER JOIN hotel ON  comentario.id_hotel= hotel.id_hotel INNER JOIN usuario ON usuario.id_usuario=comentario.id_usuario WHERE hotel.id_hotel=?'
+        $sentencia= $this->db->prepare("SELECT h.*, d.nombreDestino FROM hotel h INNER JOIN destino d ON h.id_destino=d.id_destino WHERE d.id_destino=?");
         $sentencia->execute(array($id));
         $hoteles=$sentencia->fetchAll(PDO::FETCH_OBJ);
         return $hoteles;

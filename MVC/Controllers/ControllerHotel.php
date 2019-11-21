@@ -18,6 +18,13 @@ class ControllerHotel{
         $this->viewHotel->DisplayHoteles($hoteles);
 
     }
+
+    public function getHotel($id){
+        $hotel = $this->modelHotel->getHotel($id);
+        $this->viewHotel->DisplayHotel($hotel);
+    }
+
+    
     public function InsertarHotel(){
         $ocupado=0;
         if($_POST['ocupado'] == 'on'){
