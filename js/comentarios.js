@@ -12,7 +12,6 @@ let app = new Vue({
 
 function getComentarios() {
     let id = document.querySelector("#id_hotel").value;
-    console.log(id);
     fetch("api/mostrarHotel/"+id+"/comentario")
     .then(response => response.json())
     .then(comentarios => {

@@ -59,7 +59,7 @@
 
  <form class="form-inline"action="insertarHotel" method="post">
             <div class="form-group mx-sm mb-2">
-                <tr><td></td>
+                <tr>
                 <td><input type="text" class="form-control" name="nombre"placeholder="Hotel"></td>
             </div>
             <div class="form-group mx-sm mb-2">
