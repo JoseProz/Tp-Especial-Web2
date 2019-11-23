@@ -21,7 +21,8 @@ class ControllerHotel{
 
     public function getHotel($id){
         $hotel = $this->modelHotel->getHotel($id);
-        $this->viewHotel->DisplayHotel($hotel);
+        $idUser=$this->getUser();
+        $this->viewHotel->DisplayHotel($hotel,$idUser);
     }
 
     
@@ -65,6 +66,14 @@ class ControllerHotel{
         $this->viewHotel->DisplayHotelesdeDestino($hoteles);
 
     }
-    
+    public function getUser(){
+        session_start();
+        if (isset($_SESSION['userId'])){
+            $idUser=$_SESSION['userId'];
+        }
+       
+        return $idUser;
+    }
+
 }
 ?>

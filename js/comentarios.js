@@ -22,3 +22,27 @@ function getComentarios() {
 }
 
 getComentarios();
+
+document.querySelector("#form-insertar").addEventListener('submit',addComentario);
+
+function addComentario(e){
+    e.preventDefault();
+
+    let data={
+        id_usuario: document.querySelector("#idUser").value,
+       
+        id_hotel: document.querySelector("#id_hotel").value,
+        mensaje: document.querySelector("#mensaje").value,
+        puntaje: document.querySelector("#valoracion").value,
+    }
+    
+    fetch('api/comentario', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},       
+        body: JSON.stringify(data) 
+     })
+     .then(response => {
+         getComentarios();
+     })
+     .catch(error => console.log(error));
+}
