@@ -2,6 +2,7 @@
 require_once("./MVC/Models/ModelComentario.php");
 require_once("./api/ApiController.php");
 require_once("./api/JSONView.php");
+require_once("./MVC/Controllers/ControllerUser.php");
 
 
 class ComentarioApiController extends ApiController{
@@ -11,6 +12,7 @@ class ComentarioApiController extends ApiController{
 
         $id= $params[':ID'];
         $comentarios = $this->model->getComentarios($id);
+        //$tipo= $this->controller->getUser();
         
 
         if ($comentarios){

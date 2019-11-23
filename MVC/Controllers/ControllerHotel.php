@@ -3,25 +3,44 @@ require_once "./MVC/Models/ModelHotel.php";
 require_once "./MVC/Views/ViewHotel.php";
 
 class ControllerHotel{
-
+    
     private $modelHotel;
     private $viewHotel;
-
+    
     function __construct(){
         
         $this->modelHotel = new ModelHotel();
         $this->viewHotel = new ViewHotel();
     }
-
+    
     public function GetHoteles(){
         $hoteles= $this->modelHotel->GetHoteles();
         $this->viewHotel->DisplayHoteles($hoteles);
-
+        
+    }
+    public function getTipo(){
+       if(isset($_SESSION['tipo'])){
+           $tipo=$_SESSION['tipo'];
+       }
+       
+       return $tipo;
     }
 
+    public function getUser(){
+       
+       if(isset($_SESSION['idUser'])){
+           $idUser=$_SESSION['idUser'];
+       }
+       return $idUser;
+    }
+        
+
     public function getHotel($id){
+        session_start();
         $hotel = $this->modelHotel->getHotel($id);
-        $this->viewHotel->DisplayHotel($hotel);
+        $user=$this->getUser();
+        $tipo=$this->getTipo();
+        $this->viewHotel->DisplayHotel($hotel,$user,$tipo);
     }
 
     

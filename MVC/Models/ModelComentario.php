@@ -12,5 +12,6 @@
             $obj=$sentencia->fetchAll(PDO::FETCH_OBJ);
             return $obj;
         }
+       
 
     }

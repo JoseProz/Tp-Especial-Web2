@@ -15,11 +15,12 @@ class ControllerUser {
     public function IniciarSesion(){
         $password = $_POST['pass'];
         $usuario = $this->model->GetPassword($_POST['user']);
+
         if ((isset($usuario) && ($usuario != null)) && password_verify($password,$usuario->password)){
             session_start();
+            $_SESSION['idUser'] = $usuario->id_usuario;
             $_SESSION['user'] = $usuario->email;
             $_SESSION['tipo'] = $usuario->tipo;
-            //$_SESSION['userId'] = $usuario->id_usuario;
             header("Location: " . URL_DESTINO);
         }else{
             header("Location: " . URL_LOGIN);
@@ -28,9 +29,7 @@ class ControllerUser {
        // header("Location: " . BASE_URL);
 
     }
-    public function getUser(){
-        return $_SESSION['tipo'];
-    }
+        
     public function Login(){
         $this->view->DisplayLogin();
     }

@@ -31,7 +31,6 @@
  <table class="table">
         <thead class="thead-dark">
             <tr>
-            <th scope="col">#id</th>
             <th scope="col">Hotel</th>
             <th scope="col">Telefono</th>
             <th scope="col">Direccion</th>
@@ -40,7 +39,6 @@
             </tr>
             </thead>
             <tr>
-            <th scope="row">{$hotel->id_hotel}</th>
                <td>{$hotel->nombre}</td>
                <td>{$hotel->telefono}</td>
                <td>{$hotel->direccion}</td>
@@ -49,10 +47,22 @@
                {* isset($id_hotel) ? $id_hotel : ''*} 
              </tr>
              <input type="hidden" id="id_hotel" value="{$hotel->id_hotel}">
+             <input type="hidden" id="tipoUser" value="{$tipo}">
+             <input type="hidden" id="id_user" value="{$idUser}">
             </tbody>
         </table>
 
          {include file="vue/comentarios.tpl"}
         <script src="./js/comentarios.js"></script>
+        
+    <form class="form-inline"action="insertar" method="post">
+      <div class="form-group mx-sm-3 mb-2">
+        <td><input type="textarea" class="form-control" name="mensaje"placeholder="Mensaje"></td>
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+         <td><input type="number" class="form-control" name="valoracion"placeholder="puntaje"></td>
+      </div>
+      <td><button type="submit" class="btn btn-primary mb-2">Insertar</button></td>
+    </form>
 </body>
 </html>

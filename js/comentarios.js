@@ -6,9 +6,19 @@ let app = new Vue({
     data: {
         subtitle: "Comentarios de Hotel",
         comentarios: [], 
-        auth: true
+        admin: setAdmin()
     }
 });
+
+function setAdmin(){
+    let tipo=document.querySelector("#tipoUser").value;
+    if(tipo==1){
+        tipo=true;
+    }
+    else{ tipo=false}
+    return tipo;
+
+}
 
 function getComentarios() {
     let id = document.querySelector("#id_hotel").value;
