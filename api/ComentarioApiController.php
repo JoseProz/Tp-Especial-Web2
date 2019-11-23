@@ -2,7 +2,6 @@
 require_once("./MVC/Models/ModelComentario.php");
 require_once("./api/ApiController.php");
 require_once("./api/JSONView.php");
-require_once("./MVC/Controllers/ControllerUser.php");
 
 
 class ComentarioApiController extends ApiController{

@@ -1,7 +1,6 @@
 <?php
 
 abstract class ApiController{
-    //protected $controller;
     protected $model;
     protected $view;
     private $data;
@@ -14,7 +13,7 @@ abstract class ApiController{
         //usar la php://input dirección especial para recuperar 
         //datos JSON como una cadena 
         $this->model = new comentarioModel();
-        //$this->controller= new ControllerUser();
+        
     }
 
     public function getData(){
