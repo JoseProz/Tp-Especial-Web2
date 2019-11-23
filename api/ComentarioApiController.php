@@ -23,14 +23,16 @@ class ComentarioApiController extends ApiController{
     }
 
       // TareaApiController.php
+
    public function addComentario($params = []) {     
-    $comentario = $this->getData(); // la obtengo del body
+    $comentarioId = $this->getData(); // la obtengo del body
 
     // inserta la tarea
-    $comentarioId = $this->model->InsertarComentario($comentario->mensaje, $comentario->valoracion);
+    console.log("llega hasta aca");
+    $comentarioId = $this->model->InsertarComentario($comentario->id_usuario,$comentario->id_hotel,$comentario->mensaje, $comentario->valoracion);
 
     // obtengo la recien creada
-    $comentarioNuevo = $this->model->GetTarea($comentarioId);
+    $comentarioNuevo = $this->model->getComentarios($comentarioId);
     
     if ($comentarioNuevo)
         $this->view->response($comentarioNuevo, 200);

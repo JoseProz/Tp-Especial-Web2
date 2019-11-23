@@ -46,23 +46,23 @@
                 <td>{$hotel->ocupado}</td>
                {* isset($id_hotel) ? $id_hotel : ''*} 
              </tr>
-             <input type="hidden" id="id_hotel" value="{$hotel->id_hotel}">
-             <input type="hidden" id="tipoUser" value="{$tipo}">
-             <input type="hidden" id="id_user" value="{$idUser}">
-            </tbody>
+             <input type="hidden" id="user" value="{$user}">
         </table>
 
          {include file="vue/comentarios.tpl"}
-        <script src="./js/comentarios.js"></script>
         
-    <form class="form-inline"action="insertar" method="post">
-      <div class="form-group mx-sm-3 mb-2">
-        <td><input type="textarea" class="form-control" name="mensaje"placeholder="Mensaje"></td>
-      </div>
-      <div class="form-group mx-sm-3 mb-2">
-         <td><input type="number" class="form-control" name="valoracion"placeholder="puntaje"></td>
-      </div>
-      <td><button type="submit" class="btn btn-primary mb-2">Insertar</button></td>
-    </form>
+            <form id ="form-insertar" class="form-inline" method="post">
+                <input type="hidden" id="id_user" name= "idUser" value="{$idUser}">
+                <input type="hidden" id="id_hotel" name="id_hotel" value="{$hotel->id_hotel}">
+                <div class="form-group mx-sm-3 mb-2">
+                    <td><input type="text" class="form-control" id="mensaje"name="mensaje"placeholder="Mensaje"></td>
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <td><input type="number" class="form-control" id="valoracion" name="valoracion"placeholder="puntaje"></td>
+                </div>
+                <td><button type="submit" class="btn btn-primary mb-2">Insertar</button></td>
+              </form>
+          <script src="./js/comentarios.js"></script>
+
 </body>
 </html>

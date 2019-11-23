@@ -15,5 +15,10 @@
         </li>
     </ul>
  </section>
+<<<<<<< HEAD
  
     {/literal}
+=======
+ {/literal}
+ 
+>>>>>>> d0f19641f6bcf4836bc9dd7f451b5601df63e1fd

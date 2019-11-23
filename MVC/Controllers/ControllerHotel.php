@@ -84,6 +84,6 @@ class ControllerHotel{
         $this->viewHotel->DisplayHotelesdeDestino($hoteles);
 
     }
-    
+
 }
 ?>

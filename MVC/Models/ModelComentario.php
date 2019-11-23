@@ -14,4 +14,16 @@
         }
        
 
+        public function InsertarComentario($id_user,$id_hotel,$mensaje,$valoracion){
+        $sentencia=$this->db->prepare('INSERT INTO comentario(id_hotel,id_usuario,mensaje,valoracion,fecha ) VALUES (?,?,?,?,?)');
+        $sentencia->execute(array($id_user,$id_hotel,$mensaje,$valoracion));
+        header("Location:" .BASE_URL);
+    
+    }
+
+    public function InsertarDestino($nombre,$descripcion,$temporada_alta,$puntaje ){
+                $sentencia = $this->db->prepare("INSERT INTO destino(nombreDestino,descripcion,temporada_alta,puntaje) VALUES(?,?,?,?)");
+                $sentencia->execute(array($nombre,$descripcion,$temporada_alta,$puntaje ));
+        }
+
     }
