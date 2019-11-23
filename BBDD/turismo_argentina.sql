@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-11-2019 a las 06:26:05
+-- Tiempo de generación: 23-11-2019 a las 20:27:20
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.13
 
@@ -33,16 +33,16 @@ CREATE TABLE `comentario` (
   `id_hotel` int(12) NOT NULL,
   `id_usuario` int(12) NOT NULL,
   `mensaje` varchar(200) NOT NULL,
-  `valoracion` int(2) NOT NULL
+  `valoracion` int(2) NOT NULL,
+  `fecha` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `comentario`
 --
 
-INSERT INTO `comentario` (`id_comentario`, `id_hotel`, `id_usuario`, `mensaje`, `valoracion`) VALUES
-(1, 8, 8, 'Boca te amo!', 6),
-(2, 8, 1, 'Hermoso Hotel, muy buena atención', 8);
+INSERT INTO `comentario` (`id_comentario`, `id_hotel`, `id_usuario`, `mensaje`, `valoracion`, `fecha`) VALUES
+(3, 8, 16, 'Muy buena atención', 9, '2019-11-21 19:46:25');
 
 -- --------------------------------------------------------
 
@@ -67,7 +67,7 @@ INSERT INTO `destino` (`id_destino`, `nombreDestino`, `descripcion`, `temporada_
 (3, 'Tandil', 'Ciudad entre Sierras', 'julio', 8),
 (5, 'Libertador', 'Ir a la Bianqueria', 'w', 6),
 (7, 'Bahia Blanca', 'Sur de la Provincia', 'Julio', 5),
-(8, 'Azul', 'Ciudad Fantasma', 'ninguna', 1);
+(8, 'Chivilcoy', 'Ciudad Fantasma', 'ninguna', 1);
 
 -- --------------------------------------------------------
 
@@ -105,25 +105,17 @@ INSERT INTO `hotel` (`id_hotel`, `nombre`, `telefono`, `direccion`, `precio`, `i
 CREATE TABLE `usuario` (
   `id_usuario` int(11) NOT NULL,
   `email` varchar(28) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `tipo` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `email`, `password`) VALUES
-(1, 'jose', '$2y$10$raiDQDnQV1oQYOzdOIzUROzatNan5ZatSGYyzMTC2Xknsz1RAUfJC'),
-(2, 'micaela', '$2y$10$Xgs5BsfFDXggZAtPNcJLb.Q9rkEPoUuL3NysyslvJsA3ZIKaE5WDO'),
-(3, 'silvia', '$2y$10$1uAw/vmaa2FR/or6MZ1RquBcbJlJa9cY7B1wP4W1kzXNNPxbRQqsG'),
-(4, 'silvia', '$2y$10$CuK1j61/xHagIoMMLJL9PeaLiIwbquiw/iSp4SEsqkuR0Whsa9E2i'),
-(5, 'emmanuel', '$2y$10$2SdHiR6TcQuucin4Sjt9ku4F9SiLpeT2l/RMp0e2I0xmgB8a00x66'),
-(6, 'nahuel', '$2y$10$UQNr70U6G.KCbX4HZ3L5a.neRND.VEoaN8HuqwELlxmxM/2PlCSJ2'),
-(7, 'maximiliano', '$2y$10$QLao3NPCitnFIMHU8FOQ5uBLyOZkAaNzB8Xo7ChOqKzwOr9EwlTgG'),
-(8, 'maxisantomil@hotmail.com', '$2y$10$oYD9LDH1PZgO5wUh/UlnpeXu9TX9owdBgfJ2Xo9SUDglMGrmsVFte'),
-(12, 'jose', '$2y$10$hLreteoxYOkayGb7RdM47O34MKwKk.oysd3lML777tY03Ozb9BqyO'),
-(13, '', '$2y$10$rdFEvGnLu50c2Y53txef/OAWzXgXg3k4HOA4FEnAhbvR18Qa9tVly'),
-(14, 'pepe@gmail.com', '$2y$10$7NmwOZcqMrJiUjnFo44RD.zw7.gz1mFBsvAe8uAE/RpHP9wiuXccu');
+INSERT INTO `usuario` (`id_usuario`, `email`, `password`, `tipo`) VALUES
+(16, 'joseproz1010@gmail.com', '$2y$10$R/Yw1bCcRxcLiLlUdCcSDO1OPsUbgosIzf.qmr4FvfVVY/IMAX8Wi', 1),
+(17, 'silviagige@gmail.com', '$2y$10$.9pxwnvDEQnPJc/lHEsjNOrbFmvA.QN.Tg5eqb.fYzEGLMqM6VUpu', 0);
 
 --
 -- Índices para tablas volcadas
@@ -166,7 +158,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `destino`
@@ -184,7 +176,7 @@ ALTER TABLE `hotel`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Restricciones para tablas volcadas

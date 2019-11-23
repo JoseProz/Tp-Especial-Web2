@@ -27,7 +27,6 @@ class ControllerHotel{
     }
 
     public function getUser(){
-       
        if(isset($_SESSION['idUser'])){
            $idUser=$_SESSION['idUser'];
        }
