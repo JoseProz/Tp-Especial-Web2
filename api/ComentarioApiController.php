@@ -26,10 +26,9 @@ class ComentarioApiController extends ApiController{
 
    public function addComentario($params = []) {     
     $comentarioId = $this->getData(); // la obtengo del body
-
+    var_dump($comentarioId);die;
     // inserta la tarea
-    console.log("llega hasta aca");
-    $comentarioId = $this->model->InsertarComentario($comentario->id_usuario,$comentario->id_hotel,$comentario->mensaje, $comentario->valoracion);
+    $comentarioId = $this->model->InsertarComentario($comentario->id_hotel,$comentario->id_usuario,$comentario->mensaje, $comentario->valoracion);
 
     // obtengo la recien creada
     $comentarioNuevo = $this->model->getComentarios($comentarioId);

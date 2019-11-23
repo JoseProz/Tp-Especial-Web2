@@ -46,7 +46,7 @@
                 $controllerHotel=new controllerHotel();
                 $controllerHotel->HotelesdeunDestino($partesURL[1]);
             }
-            elseif($partesURL[0]=="mostrarHotel"){
+            elseif($partesURL[0]=="hoteles/".$partesURL[0].""){
                 $controllerHotel=new controllerHotel();
                 $controllerHotel->getHotel($partesURL[1]);
             }

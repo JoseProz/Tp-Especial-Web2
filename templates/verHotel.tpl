@@ -44,14 +44,16 @@
                <td>{$hotel->direccion}</td>
                <td>{$hotel->precio}</td>
                 <td>{$hotel->ocupado}</td>
-               {* isset($id_hotel) ? $id_hotel : ''*} 
-             </tr>
-             <input type="hidden" id="user" value="{$user}">
-        </table>
+              </tr>
+            </table>
+              
+             <input type="hidden" id="id_hotel" value="{$hotel->id_hotel}">
+          
 
          {include file="vue/comentarios.tpl"}
         
-            <form id ="form-insertar" class="form-inline" method="post">
+            <form id ="form-insertar" class="form-inline" action="insertarComent" method="post">
+                <input type="hidden" id="tipoUser" name= "tipo" value="{$tipo}">
                 <input type="hidden" id="id_user" name= "idUser" value="{$idUser}">
                 <input type="hidden" id="id_hotel" name="id_hotel" value="{$hotel->id_hotel}">
                 <div class="form-group mx-sm-3 mb-2">

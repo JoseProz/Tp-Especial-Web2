@@ -25,7 +25,7 @@ class ViewHotel {
 
     public function DisplayHotel($id,$user,$tipo){
         $smarty = new Smarty();
-        $smarty->assign('titulo',"Hotel");
+        $smarty->assign('titulo','Hotel');
         $smarty->assign('BASE',BASE);
         $smarty->assign('hotel',$id);
         $smarty->assign('idUser',$user);

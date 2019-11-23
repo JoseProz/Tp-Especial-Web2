@@ -36,16 +36,16 @@ document.querySelector("#form-insertar").addEventListener('submit',addComentario
 
 function addComentario(e){
     e.preventDefault();
+    
 
     let data={
-        id_usuario: document.querySelector("#idUser").value,
-       
         id_hotel: document.querySelector("#id_hotel").value,
+        id_usuario: document.querySelector("#id_user").value,
         mensaje: document.querySelector("#mensaje").value,
-        puntaje: document.querySelector("#valoracion").value,
+        valoracion: document.querySelector("#valoracion").value,
     }
-    
-    fetch('api/comentario', {
+    console.log(data);
+    fetch('api/mostrarHotel/'+id_hotel+'', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},       
         body: JSON.stringify(data) 

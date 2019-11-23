@@ -37,13 +37,13 @@
                 </thead>
     {foreach from=$ver_hoteles item=hotel}
     {if $hotel->ocupado eq 1}
-    <strike><tr><td>{$hotel->nombre}</td>
+    <tr><td>{$hotel->nombre}</td>
       <td>{$hotel->telefono}</td>
       <td>{$hotel->direccion}</td>
       <td>{$hotel->precio}</td>
       <td>{$hotel->ocupado}</td>
       <td>{$hotel->nombreDestino}</td>
-      <td><a href='mostrarHotel/{$hotel->id_hotel}'>Mostrar hotel</a></td></tr>
+      <td><a href='hoteles/{$hotel->id_hotel}'>Mostrar hotel</a></td></tr>
     {else}
     <tr><td>{$hotel->nombre}</td>
       <td>{$hotel->telefono}</td>
@@ -51,7 +51,7 @@
       <td>{$hotel->precio}</td>
       <td>{$hotel->ocupado}</td>
       <td>{$hotel->nombreDestino}</td>
-      <td><a href='mostrarHotel/{$hotel->id_hotel}'>Mostrar hotel</a></td></tr>
+      <td><a href='hoteles/{$hotel->id_hotel}'>Mostrar hotel</a></td></tr>
     {/if}
 
 {/foreach}
