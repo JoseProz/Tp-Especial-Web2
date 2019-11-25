@@ -44,6 +44,7 @@
                <td>{$iddestino->descripcion}</td>
                <td>{$iddestino->temporada_alta}</td>
                <td>{$iddestino->puntaje}</td> 
+               <img src='{$iddestino->img}'>
                <td><a href='mostrarHoteles/{$iddestino->id_destino}'>Mostrar Hoteles</a></td>
                <td><a href='borrarDestino/{$iddestino->id_destino}'>Borrar</a></td>
              </tr>
@@ -70,7 +71,7 @@
   </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="images/cerrocatedral.jpg" alt="Second slide">
+      <img class="d-block w-100" src='{$iddestino->img}' alt="Second slide">
       <div class="carousel-caption d-none d-md-block">
         <div class="banner-text">
             <h2>Viaja</h2>

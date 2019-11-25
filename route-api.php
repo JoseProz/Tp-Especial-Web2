@@ -14,10 +14,10 @@ $method = $_SERVER["REQUEST_METHOD"];
 $router = new Router();
 
 // arma la tabla de ruteo
-$router->addRoute("mostrarHotel/:ID/comentario", "GET", "ComentarioApiController", "getComentarios");
+$router->addRoute("hoteles/:ID/comentarios", "GET", "ComentarioApiController", "getComentarios");
 //$router->addRoute("tareas/:ID", "GET", "TareasApiController", "getTarea");
-$router->addRoute("comentario/:ID", "DELETE", "ComentarioApiController", "borrarComentario");
-$router->addRoute("mostrarHotel", "POST", "ComentarioApiController", "addComentario");
+$router->addRoute("comentarios/:ID", "DELETE", "ComentarioApiController", "eliminarComentario");
+$router->addRoute("comentarios", "POST", "ComentarioApiController", "addComentario");
 //$router->addRoute("tareas/:ID", "PUT", "TareasApiController", "updateTask");
 
 

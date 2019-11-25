@@ -22,7 +22,7 @@ function setAdmin(){
 
 function getComentarios() {
     let id = document.querySelector("#id_hotel").value;
-    fetch("api/mostrarHotel/"+id+"/comentario")
+    fetch("api/hoteles/"+id+"/comentarios")
     .then(response => response.json())
     .then(comentarios => {
         app.comentarios = comentarios; // similar a $this->smarty->assign("tasks", $tasks)
@@ -45,7 +45,7 @@ function addComentario(e){
         valoracion: document.querySelector("#valoracion").value,
     }
     console.log(data);
-    fetch('api/mostrarHotel/'+id_hotel+'', {
+    fetch('api/comentarios', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},       
         body: JSON.stringify(data) 
@@ -54,4 +54,14 @@ function addComentario(e){
          getComentarios();
      })
      .catch(error => console.log(error));
+}
+
+document.querySelector("#eliminarComentario").addEventListener('submit',eliminarComentario);
+
+function eliminarComentario(e){
+    e.preventDefault();
+
+    
+
+
 }
