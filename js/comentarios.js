@@ -56,12 +56,24 @@ function addComentario(e){
      .catch(error => console.log(error));
 }
 
-document.querySelector("#eliminarComentario").addEventListener('submit',eliminarComentario);
+/*document.querySelector("#eliminarComentario").addEventListener('submit',eliminarComentario);
 
 function eliminarComentario(e){
     e.preventDefault();
 
+    let id={
+        id_comentario: document.querySelector("#idComent").value,
+    }
+    fetch('api/comentarios/id',{
+        method:'DELETE',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(id)
+    })
+    .then(response => {
+        getComentarios();
+    })
+    .catch(error => console.log(error));
     
 
 
-}
+}*/

@@ -11,6 +11,7 @@
                     <small>{{c.fecha}}</small>
                 </div>
                 <form action="EliminarComentario" id="eliminarComentario" method="post">
+                   
                     <span v-if="admin" class="mb-1"><button type="submit" class="btn btn-primary mb-2">Eliminar</button></span>
                 </form>
             </a>

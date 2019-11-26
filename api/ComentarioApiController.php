@@ -11,6 +11,7 @@ class ComentarioApiController extends ApiController{
 
         $id= $params[':ID'];
         $comentarios = $this->model->getComentarios($id);
+        var_dump($comentarios);die;
         //$tipo= $this->controller->getUser();
         
 
@@ -38,6 +39,11 @@ class ComentarioApiController extends ApiController{
         $this->view->response("Error al insertar comentario", 500);
 
 }
+
+public function deleteComentario($params =  []{
+    $idComent=$this->getData();
+    $this->model->deleteComentario($idComent->id_comentario);
+})
 
 
 
