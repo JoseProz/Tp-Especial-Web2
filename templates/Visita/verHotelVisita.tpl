@@ -15,8 +15,8 @@
           Ir a 
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="hoteles">Lista de Hoteles</a>
-          <a class="dropdown-item" href="destinos">Lista de Destinos</a>
+          <a class="dropdown-item" href="hotelesVisita">Lista de Hoteles</a>
+          <a class="dropdown-item" href="iniciarVisita">Lista de Destinos</a>
         </div>
       </li>
     </ul>
@@ -31,27 +31,28 @@
  <table class="table">
         <thead class="thead-dark">
             <tr>
-            <th scope="col">Ciudad</th>
-            <th scope="col">Descripcion</th>
-            <th scope="col">Temporada Alta</th>
-            <th scope="col">Puntaje</th>
-             <th scope="col">Mostrar Hoteles</th>
-            <th scope="col">borrar</th>
+            <th scope="col">Hotel</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Precio</th>
+             <th scope="col">Ocupado</th>
             </tr>
             </thead>
             <tr>
-               <td>{$iddestino->nombreDestino}</td>
-               <td>{$iddestino->descripcion}</td>
-               <td>{$iddestino->temporada_alta}</td>
-               <td>{$iddestino->puntaje}</td> 
-               <td><a href='mostrarHoteles/{$iddestino->id_destino}'>Mostrar Hoteles</a></td>
-               <td><a href='borrarDestino/{$iddestino->id_destino}'>Borrar</a></td>
-             </tr>
-            
-            </tbody>
-        </table>
-       
-        <img src='{$iddestino->img}'><button><a href='eliminarImg/{$iddestino->id_destino}'>Borrar</a></button>
-         
+               <td>{$hotel->nombre}</td>
+               <td>{$hotel->telefono}</td>
+               <td>{$hotel->direccion}</td>
+               <td>{$hotel->precio}</td>
+                <td>{$hotel->ocupado}</td>
+              </tr>
+            </table>
+              {foreach from=$imagenes item=imagen}
+            <tr>
+              <td>
+                <img src="{$imagen->ruta}" alt="">
+            </td>
+            </tr>
+              {/foreach}
+
 </body>
 </html>

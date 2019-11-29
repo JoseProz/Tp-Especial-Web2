@@ -10,6 +10,15 @@
             $this->model=new ModelDestino();
             $this->view=new ViewDestino();
         }
+        public function checkLogIn(){
+            session_start();
+            
+            if(!isset($_SESSION['user']) || ($_SESSION['tipo'] != 1) ){
+                header("Location: " . URL_login);
+                //var_dump($_SESSION);
+                die();
+            }
+        }
 
         public function getDestino(){
             $destinos = $this->model->getDestino();
@@ -21,14 +30,29 @@
         }
 
         public function InsertarDestino(){
+            $this->checkLogIn();
             
-
-            $this->model->InsertarDestino($_POST['nombre'],$_POST['descripcion'],$_POST['temporada_alta'],$_POST['puntaje']);
+            if ($_FILES['img']['name']) {
+                if ($_FILES['img']['type'] == "image/jpeg" || $_FILES['img']['type'] == "image/jpg" || $_FILES['img']['type'] == "image/png") {
+    
+                    $this->model->InsertarDestino($_POST['nombre'],$_POST['descripcion'],$_POST['temporada_alta'],$_POST['puntaje'],$_FILES['img']);
+                }
+                else {
+                    $this->view->showError("Formato no aceptado");
+                    die();
+                }
+            }
+            else {
+                $this->model->InsertarDestino($_POST['nombre'],$_POST['descripcion'],$_POST['temporada_alta'],$_POST['puntaje']);  
+            }
+    
         
             header("Location: " . URL_DESTINO);
          }
 
+
          public function BorrarDestino($id){
+             $this->checkLogIn();
             $this->model->BorrarDestino($id);
             header("Location: " . URL_DESTINO);
          }
@@ -43,16 +67,23 @@
        // }
              
          public function ModificarItem(){
+            $this->checkLogIn();
              $destinos =$this->model->ModificarItem($_POST["id_destino"],$_POST["nombre"],$_POST["descripcion"],$_POST["temporada_alta"],$_POST["puntaje"]);
              header("location:" .URL_DESTINO);
             }
         
-            public function ModificarItemDestino($id){
+        public function ModificarItemDestino($id){
+            $this->checkLogIn();
                 $destino = $this->model->getIdDestino($id);
                 $this->view->ModificarDestino($destino);
                 }
     
+        public function eliminarImagen($id){
+            $this->checkLogIn();
+            $destino=$this->model->eliminarImagen($id);
+            header("location:" .URL_DESTINO);
 
+        }
             
             
 

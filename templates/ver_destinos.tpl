@@ -69,7 +69,7 @@
                     <td><input type="text" class="form-control" name="puntaje"placeholder="Puntaje"></td>
                 </div>
                 <div class="form-group mx-sm-3 mb-2">
-                  <td><input type="file" class="form-control" name="imagen"></td>
+                  <td><input type="file" class="form-control" name="img"></td>
               </div>
                 <td><button type="submit" class="btn btn-primary mb-2">Insertar</button></td>
               </form>

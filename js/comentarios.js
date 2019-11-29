@@ -7,8 +7,26 @@ let app = new Vue({
         subtitle: "Comentarios de Hotel",
         comentarios: [], 
         admin: setAdmin()
+    },
+    methods:{
+        eliminarComentario: function(){
+           let id=document.querySelector("#id_comentario").value;
+            let URL='api/comentarios/'+id;
+            fetch(URL, {
+                method: 'DELETE',
+                headers: {'Content-Type': 'application/json'}
+             })
+             .then(response => {
+                 getComentarios();
+             })
+             .catch(error => console.log(error));
+        
+        }
     }
 });
+            
+
+
 
 function setAdmin(){
     let tipo=document.querySelector("#tipoUser").value;
@@ -20,7 +38,7 @@ function setAdmin(){
 
 }
 
-function getComentarios() {
+function getComentarios(){
     let id = document.querySelector("#id_hotel").value;
     fetch("api/hoteles/"+id+"/comentarios")
     .then(response => response.json())
@@ -33,6 +51,7 @@ function getComentarios() {
 getComentarios();
 
 document.querySelector("#form-insertar").addEventListener('submit',addComentario);
+//document.querySelector("#eliminarComentario").addEventListener('click',eliminarComentario);
 
 function addComentario(e){
     e.preventDefault();
@@ -56,9 +75,8 @@ function addComentario(e){
      .catch(error => console.log(error));
 }
 
-/*document.querySelector("#eliminarComentario").addEventListener('submit',eliminarComentario);
 
-function eliminarComentario(e){
+/*function eliminarComentario(e){
     e.preventDefault();
 
     let id={

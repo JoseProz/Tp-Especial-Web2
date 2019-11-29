@@ -17,9 +17,16 @@ class ModelHotel{
 
         return $hoteles;
     }
+    function getDestino(){
+        $sentencia =$this->db->prepare("SELECT * FROM  destino ORDER BY destino.puntaje asc");
+        $sentencia->execute();
+        $obj = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $obj;
+        }
+    
 
     function getHotel($id){
-        $sentencia =$this->db->prepare("SELECT * FROM hotel WHERE id_hotel=?");
+        $sentencia =$this->db->prepare("SELECT * FROM hotel h  WHERE id_hotel=?");
         $sentencia->execute(array($id));
         $hotel=$sentencia->fetch(PDO::FETCH_OBJ);
         return $hotel;
@@ -58,6 +65,12 @@ class ModelHotel{
         $hoteles=$sentencia->fetchAll(PDO::FETCH_OBJ);
         return $hoteles;
     }
+    public function eliminarUnaImagen($id){
+        $sentencia = $this->db->prepare("DELETE FROM imagen WHERE id_imagen=?");
+        $sentencia->execute(array($id));
+    }
+
+   
 
 }
 

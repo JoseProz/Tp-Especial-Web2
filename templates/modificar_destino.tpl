@@ -43,12 +43,13 @@
              </tr>
             </tbody>
             <tr>
-        <form class="form-inline"action="editarTabla" method="post">
+        <form class="form-inline"action="editarTabla" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id_destino" value="{$destino->id_destino}">
             <td><input type="text" name="nombre" value="{$destino->nombreDestino}"></td>
             <td><input type="text" name="descripcion" value="{$destino->descripcion}"></td>
             <td><input type="text"  name="temporada_alta" value="{$destino->temporada_alta}"></td>
             <td><input type="number" name="puntaje" value="{$destino->puntaje}"></td>
+            <td><input type="file" class="form-control" name="img" value="{$destino->img}"></td>
             <td><button type="submit" class="btn btn-primary mb-2">Editar</button></td>
         </form>
         </table>

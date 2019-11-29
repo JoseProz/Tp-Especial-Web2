@@ -33,26 +33,31 @@
                     <th scope="col">Precio</th>
                     <th scope="col">ocupado</th>
                     <th scope="col">Ciudad</th>
+                    <th scope="col">Disponiblidad</th>
+                    <th scope="col">Borrar</th>
+                    <th scope="col">Editar</th>
                     </tr>
                 </thead>
 
 {foreach from=$ver_hoteles item=hotel}
 {if $hotel->ocupado eq 1}
-<strike><tr>
+<tr>
 <td>{$hotel->nombre}</td>
 <td>{$hotel->telefono}</td>
 <td>{$hotel->direccion}</td>
 <td>{$hotel->precio}</td>
 <td>{$hotel->ocupado}</td>
-<td>{$hotel->nombreDestino}</td></strike>
-<td><a href='inicializar/{$hotel->id_hotel}'>Inicializar</a></td><td><a href='borrarHotel/{$hotel->id_hotel}'>Borrar</a></td></tr>
+<td>{$hotel->nombreDestino}</td>
+<td><a href='inicializar/{$hotel->id_hotel}'>Inicializar</a></td><td><a href='borrarHotel/{$hotel->id_hotel}'>Borrar</a></td>
+<td><a href='vereditarHotel/{$hotel->id_hotel}'>Editar</a></td></tr>
 {else}
 <tr>
 <td>{$hotel->nombre}</td><td>{$hotel->telefono}</td>
 <td>{$hotel->direccion}</td><td>{$hotel->precio}</td>
 <td>{$hotel->ocupado}</td>
 <td>{$hotel->nombreDestino}</td>
-<td><a href='finalizar/{$hotel->id_hotel}'>Ocupado Totalidad</a></td><td><a href='borrarHotel/{$hotel->id_hotel}'>Borrar</a></td></tr>
+<td><a href='finalizar/{$hotel->id_hotel}'>Ocupado Totalidad</a></td><td><a href='borrarHotel/{$hotel->id_hotel}'>Borrar</a></td>
+<td><a href='vereditarHotel/{$hotel->id_hotel}'>Editar</a></td></tr>
 {/if}
 
 {/foreach}
@@ -73,31 +78,18 @@
             </div>
             <td></td>
             <div class="form-group mx-sm mb-2">
-               <td><input type="numb" class="form-control" name="id_destino"placeholder="id"></td>
+               <td>
+                  <select  class="form-control" name="id_destino">
+                      <label>Seleccione Ciudad:</label>
+                        {foreach from=$destinos item=$destino}
+                        <option value="{$destino->id_destino}" placeholder="Seleccione Ciudad">{$destino->nombreDestino} </option>
+                        {/foreach}
+                     </select>
+                </td>
             </div>
             <td><button type="submit" class="btn btn-primary mb-2">Insertar</button></td></tr>
         </form>
     {****************************************************************************************************}    
-<form class="form-inline"action="editarHotel" method="post">
-           <div class="form-group mx-sm mb-2">
-                <tr><td><input type="number" class="form-control" name="id_hotel"placeholder="ID"></td>
-            </div>
-            <div class="form-group mx-sm mb-2">
-                <td><input type="text" class="form-control" name="nombre"placeholder="Hotel"></td>
-            </div><div class="form-group mx-sm mb-2">
-                <td><input type="numb" class="form-control" name="telefono"placeholder="Teléfono"></td>
-            </div>
-            <div class="form-group mx-sm mb-2">
-                <td><input type="text" class="form-control" name="direccion"placeholder="Dirección"></td>
-            </div>
-            <div class="form-group mx-sm mb-2">
-                <td><input type="numb" class="form-control" name="precio"placeholder="Precio"></td>
-            </div>
-            <div class="form-group mx-sm mb-2">
-                <td><input type="numb" class="form-control" name="id_destino"placeholder="id_destino"></td>
-            </div>
-            <td><button type="submit" class="btn btn-primary mb-2">Editar</button></td></tr>
-        </form>
 </table>
 </body>
 </html>

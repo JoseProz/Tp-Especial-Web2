@@ -8,7 +8,7 @@
     $action = $_GET["action"];
     define("BASE", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
     define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/hoteles');
-    define("URL_IDDESTINO", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/mostrardestino');
+    define("URL_IDDESTINO", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/iddestino');
     define("URL_HOTELESDESTINO", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/mostrarHoteles');
     define("URL_DESTINO", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/destinos');
     define("URL_LOGIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/login');
@@ -50,6 +50,24 @@
                 $controllerHotel=new controllerHotel();
                 $controllerHotel->getHotel($partesURL[1]);
             }
+            elseif($partesURL[0]=="verHotelesVisita"){
+                $controllerHotel=new controllerHotel();
+                $controllerHotel->HotelesdeunDestinoVisita($partesURL[1]);
+            }
+            elseif($partesURL[0]=="verHotelVisita"){
+                $controllerHotel=new controllerHotel();
+                $controllerHotel->getHotelVisita($partesURL[1]);
+            }
+
+            elseif($partesURL[0]=="eliminarUnaImagen"){
+                $controllerHotel=new controllerHotel();
+                $controllerHotel->eliminarUnaImagen($partesURL[1]);
+            }
+            elseif($partesURL[0]=="insertarImagen"){
+                $controllerHotel=new controllerHotel();
+                $controllerHotel->InsertarImagen();
+            }
+
             elseif($partesURL[0] == "editarHotel") {
                 $controllerHotel=new controllerHotel();
                 $controllerHotel->ModificarHotel();
@@ -62,6 +80,9 @@
             }
             else if($partesURL[0] == "iddestino"){
                 $controller->getIdDestino($partesURL[1]);
+            }
+            else if($partesURL[0] == "eliminarImg"){
+                $controller->eliminarImagen($partesURL[1]);
             }
             
             elseif($partesURL[0] == "login") {
@@ -113,6 +134,10 @@
                 $controllerHotel= new ControllerHotel();
                 $controllerHotel->InicializarHotel($partesURL[1]);
             }
+            elseif($partesURL[0]=="vereditarHotel"){
+                $controllerHotel= new ControllerHotel();
+                $controllerHotel->vereditarHotel($partesURL[1]);
+            }
     }
-}
+    }
 ?>

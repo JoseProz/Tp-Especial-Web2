@@ -11,7 +11,6 @@ class ComentarioApiController extends ApiController{
 
         $id= $params[':ID'];
         $comentarios = $this->model->getComentarios($id);
-        var_dump($comentarios);die;
         //$tipo= $this->controller->getUser();
         
 
@@ -40,10 +39,11 @@ class ComentarioApiController extends ApiController{
 
 }
 
-public function deleteComentario($params =  []{
-    $idComent=$this->getData();
-    $this->model->deleteComentario($idComent->id_comentario);
-})
+public function eliminarComentario($params = []){
+    $id= $params[':ID'];
+    $this->model->eliminarComentario($id);
+
+}
 
 
 

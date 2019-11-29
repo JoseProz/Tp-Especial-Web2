@@ -44,9 +44,29 @@
                <td>{$hotel->direccion}</td>
                <td>{$hotel->precio}</td>
                 <td>{$hotel->ocupado}</td>
+                
               </tr>
+              <tr>
+                  <form class="form-inline"action="insertarImagen" method="post" enctype="multipart/form-data">
+                   
+                  
+                    <div class="form-group mx-sm-3 mb-2">
+                        <td><input type="hidden" class="form-control" value="{$hotel->id_hotel}" name="id_hotel"></td>
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                      <td><input type="file" class="form-control" name="img"></td>
+                  </div>
+                    <td><button type="submit" class="btn btn-primary mb-2">Insertar Imagen</button></td>
+                  </form>
+                </tr>
             </table>
-              
+            {foreach from=$imagenes item=imagen}
+            <tr>
+              <td>
+                <img src="{$imagen->ruta}" alt=""><button><a href='eliminarUnaImagen/{$imagen->id_imagen}'>Borrar</a></button>
+            </td>
+            </tr>
+              {/foreach}
              <input type="hidden" id="id_hotel" value="{$hotel->id_hotel}">
           
 

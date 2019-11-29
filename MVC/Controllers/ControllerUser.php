@@ -18,6 +18,7 @@ class ControllerUser {
 
         if ((isset($usuario) && ($usuario != null)) && password_verify($password,$usuario->password)){
             session_start();
+            
             $_SESSION['idUser'] = $usuario->id_usuario;
             $_SESSION['user'] = $usuario->email;
             $_SESSION['tipo'] = $usuario->tipo;

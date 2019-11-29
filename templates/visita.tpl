@@ -42,7 +42,7 @@
                <td>{$destino->descripcion}</td>
                <td>{$destino->temporada_alta}</td>
                <td>{$destino->puntaje}</td>
-               <td><a href='mostrarHoteles/{$destino->id_destino}'>Mostrar Hoteles</a></td>
+               <td><a href='verHotelesVisita/{$destino->id_destino}'>Mostrar Hoteles</a></td>
              </tr>
             {/foreach}
             </tbody>
